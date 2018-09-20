@@ -278,14 +278,11 @@ footer > div > div a:not(:last-child) {
   left: 50%;
   transform: translateX(-50%); */
   /* width: auto !important; */
-  width: 100% !important;
+  width: 95% !important;
   height: auto !important;
+  display: block;
+  margin: auto;
   /* height: 100% !important; */
-}
-.pocetna section.info {
-  
-  margin-bottom: 30px;
-  color: var(--info-section-color);
 }
 /* 3 Red Divs with short info */
 /* .pocetna section.info > div > div {
@@ -567,61 +564,9 @@ footer > div > div a:not(:last-child) {
 /* } */
 
 
-@media screen and (min-width: 760px) {
-  .pocetna section.info > div > div {
-    float: left;
-    width: 32.7%;
-    margin-bottom: 10px;
-  }
-  .pocetna section.info > div > div:nth-child(2) {
-    margin: 0 0.8%;
-  }
-}
-
 @media screen and (min-width: 1200px) {
   .pocetna .max-1200 {
     width: 1200px;
-  }
-  .pocetna .info-img-info {
-    display: flex;
-    flex-direction: row;
-    height: 400px;
-    margin-bottom: 5px;
-  }
-  .pocetna #infoLeft {
-    order: 1;
-    position: relative;
-    left: 25%;
-    transition: all .7s ease-out;
-    margin: 0 5px 0 0;
-    width: 295px;
-  }
-  .pocetna #infoLeft.slide-info-left {
-    left: 0;
-  }
-  .pocetna #infoRight.slide-info-right {
-    right: 0;
-  }
-  .pocetna .course-image {
-    order: 2;
-    margin: 0;
-    box-shadow: none;
-  }
-  .pocetna #infoRight {
-    position: relative;
-    right: 25%;
-    transition: all .7s ease-out;
-    order: 3;
-    margin: 0 0 0 5px;
-    width: 295px;
-  }
-  .pocetna .course-header {
-    position: relative;
-    bottom: 170px;
-    transition: all .7s ease-out;
-  }
-  .pocetna .slide-course-header {
-    bottom: 0;
   }
 }
 @media screen and (min-width: 1230px) {
