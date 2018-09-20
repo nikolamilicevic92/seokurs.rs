@@ -20,7 +20,6 @@
 <body>
 
   <header>
-    <?php require $__includes__ . "includes.logo-contact.php"; ?>
     <?php require $__includes__ . "includes.nav.php"; ?> 
   </header>
 

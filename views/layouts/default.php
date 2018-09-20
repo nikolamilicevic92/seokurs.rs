@@ -20,7 +20,6 @@
 <body>
 
   <header>
-    @include(logo-contact)
     @include(nav) 
   </header>
 
