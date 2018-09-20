@@ -5,7 +5,14 @@
       <li>
           <span id="menuToggle"></span>
       </li>
-      <li><a class="menu-link <?php echo htmlspecialchars(isActive('/')); ?>" href="/">POČETNA</a></li>
+
+      <li>
+        <a class="menu-link logo clearfix" href="/">
+          <span class="first-part">SEO</span><span class="second-part">KURS</span>
+        </a>
+      </li>
+
+      <!-- <li><a class="menu-link <?php echo htmlspecialchars(isActive('/')); ?>" href="/">POČETNA</a></li> -->
       <li><a class="menu-link <?php echo htmlspecialchars(isActive('seo-kurs')); ?>" href="seo-kurs">KURS</a></li>
       <li><a class="menu-link <?php echo htmlspecialchars(isActive('seo-optimizacija')); ?>" href="seo-optimizacija">OPTIMIZACIJA</a></li>
       <li><a class="menu-link <?php echo htmlspecialchars(isActive('konsultacije')); ?>" href="konsultacije">SAVETOVANJE</a></li>

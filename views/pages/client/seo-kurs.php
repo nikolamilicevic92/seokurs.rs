@@ -28,7 +28,7 @@
         <span id="price">Cena 11.999 RSD</span>
       </div>
       <div class="clearfix">
-        <button class="btn btn-danger btn-lg float-right">Kupi</button>
+        <button class="btn btn-danger btn-lg float-right shdw">Kupi</button>
       </div>
     </div>
   </div>
