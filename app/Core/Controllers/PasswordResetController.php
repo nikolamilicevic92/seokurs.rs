@@ -8,6 +8,7 @@ use Core\Support\Session;
 use Core\Support\Validator;
 use Core\Support\Mailer;
 use Core\Models\User;
+use Models\Page;
 
 /**
  * This class handles user reigstration.
@@ -32,7 +33,11 @@ class PasswordResetController extends BaseController
   
   public function index()
   {
-    $this->render('auth.password-reset', $this->data);
+    $this->render('auth.password-reset', array_merge([
+        'page' => Page::one(['page_name' => 'password-reset'])
+      ],
+      $this->data
+    ));
   }
 
 

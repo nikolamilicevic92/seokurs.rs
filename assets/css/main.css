@@ -577,7 +577,7 @@ footer > div > div a:not(:last-child) {
 /***** seo-optmizacija page ****/
 .seo-optmizacija .wrapper {
   max-width: 1200px;
-  padding: 50px 0 50px 15px;
+  padding: 0 0 50px 15px;
   margin: auto;
 }
 .seo-optmizacija #accordions {
@@ -809,20 +809,16 @@ textarea {
 /***** End of seo-optmizacija page ****/
 
 /***** kontakt page *****/
-.kontakt {
-  padding-top: 50px;
-}
 .kontakt .wrapper {
   max-width: 1100px;
   background-color: red;
   margin: auto;
-  margin-bottom: 50px;
   padding: 90px;
 }
 .kontakt .info {
   float: left;
   width: 35%;
-  height: 521px;
+  height: 530px;
   padding: 30px;
   color: white;
   background-color: black;
@@ -961,8 +957,7 @@ textarea {
 
 /***** nasi-partneri page *****/
 .nasi-partneri .wrapper {
-  padding-top: 50px;
-  margin-bottom: 100px;
+  padding-bottom: 50px;
 }
 .nasi-partneri .partners {
   display: flex;
@@ -987,9 +982,6 @@ textarea {
 /***** End of nasi-partneri page *****/
 
 /***** konsultacije page *****/
-.konsultacije {
-  padding-top: 50px;
-}
 .konsultacije .wrapper,
 .pocetna .meow {
   padding: 18px;
@@ -998,7 +990,9 @@ textarea {
   background-color: white;
   color: black;
 }
-
+.konsultacije .wrapper {
+  margin-bottom: 0;
+}
 .konsultacije .left h1,
 .pocetna .meow .left h1 {
   margin-bottom: 40px;
@@ -1116,7 +1110,6 @@ textarea {
 
 /***** portfolio page *****/
 .portfolio {
-  padding-top: 50px;
   padding-bottom: 50px;
 }
 .portfolio .wrapper {
@@ -1236,11 +1229,6 @@ textarea {
 /***** End of portfolio-single page *****/
 
 /***** o-nama page *****/
-.o-nama {
-  padding-top: 50px;
-  margin-bottom: 50px;
-  font-family: Verdana;
-}
 .o-nama .tabs {
   float: left;
   width: 300px;
@@ -1337,7 +1325,7 @@ textarea {
 /* Transition from hamburger menu to inline  */ 
 @media screen and (min-width: 1165px) {
   body > main {
-    min-height: calc(100vh - 226px);
+    min-height: calc(100vh - 150px);
   }
   .pocetna video { 
     margin-top: 0;
