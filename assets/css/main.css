@@ -1302,20 +1302,7 @@ textarea {
 .o-nama .tabs li.active h2 {
   background: linear-gradient(to bottom, rgb(251, 1, 1), rgb(168, 0, 0));
 }
-.o-nama .tabs li.active::after {
-  content: '';
-  display: block;
-  position: absolute;
-  background-color: red;
-  width: 15px;
-  height: 15px;
-  right: -8px;
-  top: 30px;
-  transform: rotate(45deg);
-  /* border-top: 1px solid rgba(0, 0, 0, 0.897);
-  border-right: 1px solid rgba(0, 0, 0, 0.897); */
-  border-top-right-radius: 30%;
-}
+
 .o-nama .tabs-content span {
   display: block;
   height: 80px;
