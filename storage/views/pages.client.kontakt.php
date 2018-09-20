@@ -6,8 +6,8 @@
     
     <div class="info">
       <span id="mail-icon"></span>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil, assumenda nobis.</p>
+      <p>Potrebne su Vam dodatne informacije?</p>
+      <p>Kontaktirajte nas putem elektronske pošte, odgovorićemo Vam u najkraćem mogućem roku.</p>
     </div>
 
     <form action="kontakt" method="post">
@@ -18,7 +18,7 @@
       </div>
       <div class="form-group">
         <label for="ime_i_prezime">Ime i prezime</label>
-        <label for="email">Email</label>
+        <label for="email">E-mail</label>
         <input type="text" name="ime_i_prezime" class="form-control inline" id="ime_i_prezime" required>
         <input type="email" name="email" class="form-control inline" id="email" required>
       </div>
