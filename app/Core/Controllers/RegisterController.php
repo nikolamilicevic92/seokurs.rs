@@ -8,6 +8,7 @@ use Core\Support\Mailer;
 use Core\Router\Request;
 use Core\Support\Session;
 use Core\Models\User;
+use Models\Page;
 
 /**
  * This class handles user reigstration.
@@ -33,7 +34,11 @@ class RegisterController extends BaseController
   
   public function index()
   {
-    $this->render('auth.register', $this->data);
+    $this->render('auth.register', array_merge([
+        'page' => Page::one(['page_name' => 'register'])
+      ],
+      $this->data
+    ));
   }
 
 
