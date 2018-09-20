@@ -38,6 +38,7 @@ class BlogController extends BaseController
   {
     $this->render('create', [
       'page' => toObject([
+        'page_name' => 'create-blog',
         'title' => 'Kreiranje bloga',
         'keywords' => '',
         'description' => ''
