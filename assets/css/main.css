@@ -278,7 +278,7 @@ footer > div > div a:not(:last-child) {
   left: 50%;
   transform: translateX(-50%); */
   /* width: auto !important; */
-  width: 95% !important;
+  width: 90% !important;
   height: auto !important;
   display: block;
   margin: auto;
