@@ -159,17 +159,17 @@ body > main {
   padding: 50px;
 }
 .pocetna .atp {
-  box-shadow: 0 5px 15px gray;
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.87);
 }
 .pocetna .atp > div:first-child {
-  background-color: rgb(252, 250, 250);
+  background-color: #14141415;
   height: 276px;
   text-align: center;
 }
 
 .pocetna .atp > div:last-child {
   background-color: black;
-  color: white;
+  color: rgba(255, 255, 255, 0.952);
 }
 
 .pocetna .atp > div:first-child p {
@@ -204,10 +204,10 @@ footer > div > div a:not(:last-child) {
   float: left;
   margin-right: 15px;
   padding: 8px;
-  background-color: rgba(255, 255, 255, 0.226);
+  background-color: rgb(255, 255, 255);
 }
 .pocetna .atp ul li:hover {
-  background-color: rgba(255, 255, 255, 0.363);
+  background-color: #fa0606d0;
   cursor: pointer;
 }
 
