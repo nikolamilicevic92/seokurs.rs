@@ -93,7 +93,13 @@ class QuestionsController extends BaseController
 
   public function destroy($id)
   {
-    //
+    Answer::where(['id_question' => $id])->delete();
+
+    $question = Question::one($id);
+
+    Question::where($id)->delete();
+
+    $this->redirect('/test/' . $question->id_test . '/edit');
   }
   
 }

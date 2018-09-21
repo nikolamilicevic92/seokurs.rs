@@ -31,15 +31,11 @@ $('#testDuration').on('input', input => {
 }, 300);
 
 $('.delete-answer').on('click', button => {
-  _delete('/answer/' + button.attr('data-id'), {}, false)
+  _delete('/answer/' + button.attr('data-id'))
     .then(res => {
-      if(res.trim() != '') {
-        alert('Something went wrong, check console for more info');
-        console.log(res);
-      } else {
+        updateCSRF(res.csrf)
         //Removing the answer from the DOM
         $('#answer-' + button.attr('data-id')).die();
-      }
     })
 })
 
@@ -47,4 +43,5 @@ $('.delete-answer').on('click', button => {
 //to be able to send additioinal requests without reloading the page
 function updateCSRF(csrf) {
   $('head>meta[name="csrf"]').attr('value', csrf);
+  $('input[name="_csrf"]').value(csrf);
 }

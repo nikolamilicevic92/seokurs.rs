@@ -99,6 +99,8 @@ class AnswersController extends BaseController
   public function destroy($id)
   {
     Answer::where($id)->delete();
+
+    $this->json(['csrf' => Core\Support\Session::get('csrf')]);
   }
   
 }
