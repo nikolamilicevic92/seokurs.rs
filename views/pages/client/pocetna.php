@@ -99,15 +99,15 @@
 
   <div class="atp max-1200 clearfix">
     <div>
-        <p>Pretplatite se na naše novine!</p>
+        <p>Pretplatite se, ne propustite obaveštenja!</p>
         <div>
             <input type="email" id="subscriber" class="form-control inline" placeholder="e-mail adresa">
             <input type="button" class="btn btn-danger" value="Pretplati se">
         </div>
     </div>
     <div>
-        <p>Besplatan sadržaj na društvenim mrežama!</p>
-        <p>ZAPRATITE NAS</p>
+        <p>Pratite nas na društvenim mrežama?</p>
+        <p>POSETITE NAS</p>
         <ul class="clearfix">
             <li>
                 <a href="#">
