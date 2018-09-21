@@ -3,7 +3,16 @@
   
 <div class="wrapper">
   <div class="course-full">
-    
+
+    <div class="clearfix">
+      <span id="videoTitle"></span>
+      <span id="timer">&nbsp;</span>
+    </div>
+
+    <video src="" controls>
+      Vas browser ne podrzava video tag
+    </video>
+
     <div class="course-statistic">
       <p>Pregledano <span id="videosWatched"></span> od <span id="videosCount"></span> snimaka</p>
       <div class="progression-container">
@@ -14,15 +23,6 @@
         <div id="testsProgression"></div>
       </div>
     </div>
-
-    <div class="clearfix">
-      <span id="videoTitle"></span>
-      <span id="timer">&nbsp;</span>
-    </div>
-
-    <video src="" controls>
-      Vas browser ne podrzava video tag
-    </video>
 
     <?php if(user()->isAdmin): ?>
     <!-- Form for creating new section -->

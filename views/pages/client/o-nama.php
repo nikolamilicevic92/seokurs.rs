@@ -17,42 +17,42 @@
         <h3>{{$cf['t1']->value}}</h3>
         <div {{$editable}} data-id="{{$cf['t1_p']->id}}">{{$cf['t1_p']->value}}</div>
         <div class="flex-center">
-          <img height="100px" src="assets/media/course-image.jpeg" alt="">
+          <img style="" src="assets/media/course-image.jpeg" alt="">
         </div>
       </li>
       <li>
         <h3>{{$cf['t2']->value}}</h3>
         <div {{$editable}} data-id="{{$cf['t2_p']->id}}">{{$cf['t2_p']->value}}</div>
         <div class="flex-center">
-          <img height="100px" src="assets/media/course-image.jpeg" alt="">
+          <img height="600" src="assets/media/course-image.jpeg" alt="">
         </div>
       </li>
       <li>
         <h3>{{$cf['t3']->value}}</h3>
         <div {{$editable}} data-id="{{$cf['t3_p']->id}}">{{$cf['t3_p']->value}}</div>
         <div class="flex-center">
-          <img height="100px" src="assets/media/course-image.jpeg" alt="">
+          <img height="600" src="assets/media/course-image.jpeg" alt="">
         </div>
       </li>
       <li>
         <h3>{{$cf['t4']->value}}</h3>
         <div {{$editable}} data-id="{{$cf['t4_p']->id}}">{{$cf['t4_p']->value}}</div>
         <div class="flex-center">
-          <img height="100px" src="assets/media/course-image.jpeg" alt="">
+          <img height="600" src="assets/media/course-image.jpeg" alt="">
         </div>
       </li>
       <li>
         <h3>{{$cf['t5']->value}}</h3>
         <div {{$editable}} data-id="{{$cf['t5_p']->id}}">{{$cf['t5_p']->value}}</div>
         <div class="flex-center">
-          <img height="100px" src="assets/media/course-image.jpeg" alt="">
+          <img height="600" src="assets/media/course-image.jpeg" alt="">
         </div>
       </li>
       <li>
         <h3>{{$cf['t6']->value}}</h3>
         <div {{$editable}} data-id="{{$cf['t6_p']->id}}">{{$cf['t6_p']->value}}</div>
         <div class="flex-center">
-          <img height="100px" src="assets/media/course-image.jpeg" alt="">
+          <img height="600" src="assets/media/course-image.jpeg" alt="">
         </div>
       </li>
     </ul>

@@ -60,7 +60,7 @@ p {
   margin-right: 5px
 }
 .second-part {
-  color: #fe4880;
+  color: red;
 }
 .hide {
   display: none;
@@ -343,7 +343,7 @@ footer > div > div a:not(:last-child) {
 
 /* Purchased part */
 .seo-kurs .course-statistic {
-  margin-bottom: 50px;
+  margin: 30px 0;
 }
 .seo-kurs .progression-container {
   height: 20px;
@@ -1244,7 +1244,7 @@ textarea {
 .o-nama .tabs-content ul {
   overflow: hidden;
   position: relative;
-  height: 450px;
+  height: 506px;
 }
 .o-nama .tabs li {
   margin-bottom: 8px;
