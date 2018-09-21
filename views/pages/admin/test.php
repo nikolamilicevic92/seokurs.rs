@@ -42,7 +42,7 @@
       <div class="clearfix" style="margin-bottom:10px;">
         <span>{{ ($index + 1) . '. Pitanje' }}</span>
         <!-- Form for deleting a question -->
-        <form class="delete-question float-right" action="/question/{{$section->id}}" method="POST">
+        <form class="delete-question float-right" action="/question/{{$question->id}}" method="POST">
           {!! csrfFormField() !!}
           <input type="hidden" name="_method" value="DELETE">
           <input type="submit" class="btn btn-danger" value="Obriši">
