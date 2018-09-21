@@ -115,7 +115,7 @@
     <div>
         <p>Besplatan sadržaj na društvenim mrežama!</p>
         <p>ZAPRATITE NAS</p>
-        <ul class="clearfix">
+        <ul class="flex-center">
             <li>
                 <a href="#">
                     <img src="assets/media/facebook.png" alt="">

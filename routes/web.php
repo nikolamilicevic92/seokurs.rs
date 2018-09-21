@@ -2,7 +2,7 @@
 
 
 Route::map([
-  '/', '/konsultacije', '/o-nama', '/kontakt'
+  '/', '/konsultacije', '/o-nama', '/kontakt', '/pravila-koriscenja', '/politika-privatnosti'
 ], 'PagesController');
 
 
