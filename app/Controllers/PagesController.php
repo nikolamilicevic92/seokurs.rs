@@ -29,6 +29,32 @@ class PagesController extends BaseController
 	}
 
 
+	public function politikaPrivatnosti()
+	{
+		$this->render('politika-privatnosti', [
+			'page' => toObject([
+				'page_name' => 'politika-privatnosti',
+				'title' => 'Politika privatnosti',
+				'keywords' => '',
+				'description' => ''
+			])
+		]);
+	}
+
+
+	public function pravilaKoriscenja()
+	{
+		$this->render('pravila-koriscenja', [
+			'page' => toObject([
+				'page_name' => 'pravila-koriscenja',
+				'title' => 'Pravila koriscenja',
+				'keywords' => '',
+				'description' => ''
+			])
+		]);
+	}
+
+
 	public function konsultacije()
 	{
 		$this->render('konsultacije', [
