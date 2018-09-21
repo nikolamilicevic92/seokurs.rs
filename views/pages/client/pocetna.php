@@ -16,7 +16,7 @@
                 <h3 {{$editable}} data-id="{{$cf['card_1_title']->id}}">{{$cf['card_1_title']->value}}</h3>
                 <p {{$editable}} data-id="{{$cf['card_1_content']->id}}">{{$cf['card_1_content']->value}}</p>
                 <div class="flex-center">
-                <img height="380" src="assets/media/Pocetna1.png" alt="">
+                <img height="350" src="assets/media/Pocetna1.png" alt="">
                 </div>
             </div>
             </li>
