@@ -25,42 +25,42 @@
                         <h3 <?php echo htmlspecialchars($editable); ?> data-id="<?php echo htmlspecialchars($cf['card_1_title']->id); ?>"><?php echo htmlspecialchars($cf['card_1_title']->value); ?></h3>
                         <div <?php echo htmlspecialchars($editable); ?> data-id="<?php echo htmlspecialchars($cf['card_1_content']->id); ?>"><?php echo htmlspecialchars($cf['card_1_content']->value); ?></div>
                         <div class="flex-center">
-                            <img height="80px" src="assets/media/course-image.jpeg" alt="">
+                            <img height="380px" src="assets/media/Pocetna1.png" alt="">
                         </div>
                     </li>
                     <li>
                         <h3 <?php echo htmlspecialchars($editable); ?> data-id="<?php echo htmlspecialchars($cf['card_2_title']->id); ?>"><?php echo htmlspecialchars($cf['card_2_title']->value); ?></h3>
                         <div <?php echo htmlspecialchars($editable); ?> data-id="<?php echo htmlspecialchars($cf['card_2_content']->id); ?>"><?php echo htmlspecialchars($cf['card_2_content']->value); ?></div>
                         <div class="flex-center">
-                            <img height="80px" src="assets/media/course-image.jpeg" alt="">
+                            <img height="380px" src="assets/media/Pocetna2.png" alt="">
                         </div>                   
                     </li>
                     <li>                       
                         <h3 <?php echo htmlspecialchars($editable); ?> data-id="<?php echo htmlspecialchars($cf['card_3_title']->id); ?>"><?php echo htmlspecialchars($cf['card_3_title']->value); ?></h3>
                         <div <?php echo htmlspecialchars($editable); ?> data-id="<?php echo htmlspecialchars($cf['card_3_content']->id); ?>"><?php echo htmlspecialchars($cf['card_3_content']->value); ?></div>
                         <div class="flex-center">
-                            <img height="80px" src="assets/media/course-image.jpeg" alt="">
+                            <img height="380px" src="assets/media/Pocetna3.png" alt="">
                         </div>
                     </li>
                     <li>
                         <h3 <?php echo htmlspecialchars($editable); ?> data-id="<?php echo htmlspecialchars($cf['card_4_title']->id); ?>"><?php echo htmlspecialchars($cf['card_4_title']->value); ?></h3>
                         <div <?php echo htmlspecialchars($editable); ?> data-id="<?php echo htmlspecialchars($cf['card_4_content']->id); ?>"><?php echo htmlspecialchars($cf['card_4_content']->value); ?></div>
                         <div class="flex-center">
-                            <img height="80px" src="assets/media/course-image.jpeg" alt="">
+                            <img height="380px" src="assets/media/Pocetna4.png" alt="">
                         </div>
                     </li>
                     <li>
                         <h3 <?php echo htmlspecialchars($editable); ?> data-id="<?php echo htmlspecialchars($cf['card_5_title']->id); ?>"><?php echo htmlspecialchars($cf['card_5_title']->value); ?></h3>
                         <div <?php echo htmlspecialchars($editable); ?> data-id="<?php echo htmlspecialchars($cf['card_5_content']->id); ?>"><?php echo htmlspecialchars($cf['card_5_content']->value); ?></div>
                         <div class="flex-center">
-                            <img height="80px" src="assets/media/course-image.jpeg" alt="">
+                            <img height="380px" src="assets/media/Pocetna5.png" alt="">
                         </div>
                     </li>
                     <li>
                         <h3 <?php echo htmlspecialchars($editable); ?> data-id="<?php echo htmlspecialchars($cf['card_6_title']->id); ?>"><?php echo htmlspecialchars($cf['card_6_title']->value); ?></h3>
                         <div <?php echo htmlspecialchars($editable); ?> data-id="<?php echo htmlspecialchars($cf['card_6_content']->id); ?>"><?php echo htmlspecialchars($cf['card_6_content']->value); ?></div>
                         <div class="flex-center">
-                            <img height="80px" src="assets/media/course-image.jpeg" alt="">
+                            <img height="320px" src="assets/media/Pocetna6.png" alt="">
                         </div>
                     </li>
                 </ul>
@@ -89,7 +89,7 @@
             <div class="image-container">
 
             </div>
-            <a href="seo-kurs" class="btn-info">VISE <span class="arrow-right"></span><span class="arrow-right"></span></a>
+            <a href="seo-kurs" class="btn-info">Poruči SEO Kurs <span class="arrow-right"></span><span class="arrow-right"></span></a>
         </div>
     </div>
       <?php if(user()->isAdmin): ?>
