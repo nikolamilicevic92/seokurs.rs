@@ -2,11 +2,14 @@
 <div>
   <nav class="max-1200 clearfix">  
     <ul class="menu-links clearfix">
-      <li>
+      <li class="clearfix">
+          <a id="hideOnBig" class="menu-link logo clearfix float-left" href="/">
+            <span class="first-part">SEO</span><span class="second-part">KURS</span>
+          </a>
           <span id="menuToggle"></span>
       </li>
 
-      <li>
+      <li id="hideOnSmall">
         <a class="menu-link logo clearfix" href="/">
           <span class="first-part">SEO</span><span class="second-part">KURS</span>
         </a>

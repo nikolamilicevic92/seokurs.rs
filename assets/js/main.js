@@ -7,7 +7,9 @@
       showMenu = !showMenu;
       if(showMenu) {
           for(let i = 0; i < menu.length; i++) {
-              menu[i].style.display = 'block';
+              if(i !== 0) {
+                menu[i].style.display = 'block';
+              }
           }
       } else {
           for(let i = 0; i < menu.length; i++) {
