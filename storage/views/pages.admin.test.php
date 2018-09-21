@@ -42,7 +42,7 @@
       <div class="clearfix" style="margin-bottom:10px;">
         <span><?php echo htmlspecialchars( ($index + 1) . '. Pitanje' ); ?></span>
         <!-- Form for deleting a question -->
-        <form class="delete-question float-right" action="/question/<?php echo htmlspecialchars($section->id); ?>" method="POST">
+        <form class="delete-question float-right" action="/question/<?php echo htmlspecialchars($question->id); ?>" method="POST">
           <?php echo ( csrfFormField() ); ?>
           <input type="hidden" name="_method" value="DELETE">
           <input type="submit" class="btn btn-danger" value="Obriši">
