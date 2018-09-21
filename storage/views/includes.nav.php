@@ -23,9 +23,9 @@
       <li><a class="menu-link <?php echo htmlspecialchars(isActive('blog')); ?>" href="blog">BLOG</a></li>
       
       <?php if(user()->status('guest')): ?>
-        <li><a class="menu-link <?php echo htmlspecialchars(isActive(LOGIN_URI)); ?>" href="<?php echo htmlspecialchars(LOGIN_URI); ?>">LOG IN</a></li>   
+        <li><a class="menu-link <?php echo htmlspecialchars(isActive(LOGIN_URI)); ?>" href="<?php echo htmlspecialchars(LOGIN_URI); ?>">SIGN UP</a></li>   
       <?php else: ?>     
-        <li><a class="menu-link" href="/logout">LOG OUT</a></li>
+        <li><a class="menu-link" href="/logout">SIGN OUT</a></li>
       <?php endif; ?>         
     </ul>
   </nav>

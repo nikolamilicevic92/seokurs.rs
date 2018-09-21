@@ -34,6 +34,9 @@
   margin: 0;
   padding: 0;
 }
+footer{
+  margin-top: 30px;
+}
 .shdw {
   box-shadow: 0 3px 15px gray;
 }
@@ -156,25 +159,22 @@ body > main {
   padding: 50px;
 }
 .pocetna .atp {
-  box-shadow: 0 0 1px gray;
+  box-shadow: 0 5px 15px gray;
 }
 .pocetna .atp > div:first-child {
-  background-color: rgb(243, 243, 243);
-  height: 306px;
+  background-color: rgb(252, 250, 250);
+  height: 276px;
+  text-align: center;
 }
-.pocetna .atp > div:first-child:hover {
-  background-color: rgb(233, 233, 233);
-}
+
 .pocetna .atp > div:last-child {
-  background-color: red;
+  background-color: black;
   color: white;
 }
-.pocetna .atp > div:last-child:hover {
-  background-color: rgb(197, 0, 0);
-}
+
 .pocetna .atp > div:first-child p {
   font-weight: bold;
-  color: red;
+  color: black;
 }
 .pocetna .atp > div:last-child p:first-child {
   font-weight: bold;
@@ -182,7 +182,7 @@ body > main {
 .pocetna .atp > div:last-child p:nth-child(2) {
   font-size: 35px;
 }
-.pocetna .atp > div > * {
+.pocetna .atp > div > *:not(:last-child) {
   margin-bottom: 30px;
 }
 footer > div > div > p {
@@ -218,7 +218,8 @@ footer > div > div a:not(:last-child) {
   position: relative;
   width: 100%;
   /* margin-top: 10px; */
-  margin-bottom: 40px;
+  margin-bottom: 10px;
+  padding-bottom: 30px;
   box-shadow: 0 10px 30px gray;
 }
 .meow .btn-info {
@@ -577,7 +578,7 @@ footer > div > div a:not(:last-child) {
 /***** seo-optmizacija page ****/
 .seo-optmizacija .wrapper {
   max-width: 1200px;
-  padding: 0 0 50px 15px;
+  padding: 0 0 10px 15px;
   margin: auto;
 }
 .seo-optmizacija #accordions {
@@ -809,6 +810,9 @@ textarea {
 /***** End of seo-optmizacija page ****/
 
 /***** kontakt page *****/
+.kontakt {
+  padding-bottom: 50px;
+}
 .kontakt .wrapper {
   max-width: 1100px;
   background-color: red;
@@ -886,7 +890,8 @@ textarea {
 
 /***** blog page *****/
 .blog .max-1200 {
-  padding-top: 50px;
+  padding-top: 30px;
+  padding-bottom:  50px;
 }
 .blog .max-1200 > div {
   display: flex;
@@ -992,7 +997,7 @@ textarea {
   color: black;
 }
 .konsultacije .wrapper {
-  margin-bottom: 0;
+  padding-bottom: 50px;
 }
 .konsultacije .left h1,
 .pocetna .meow .left h1 {

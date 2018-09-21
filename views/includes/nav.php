@@ -23,9 +23,9 @@
       <li><a class="menu-link {{isActive('blog')}}" href="blog">BLOG</a></li>
       
       @if(user()->status('guest'))
-        <li><a class="menu-link {{isActive(LOGIN_URI)}}" href="{{LOGIN_URI}}">LOG IN</a></li>   
+        <li><a class="menu-link {{isActive(LOGIN_URI)}}" href="{{LOGIN_URI}}">SIGN UP</a></li>   
       @else     
-        <li><a class="menu-link" href="/logout">LOG OUT</a></li>
+        <li><a class="menu-link" href="/logout">SIGN OUT</a></li>
       @endif         
     </ul>
   </nav>

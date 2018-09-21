@@ -102,7 +102,7 @@
         <p>Pretplatite se na naše novine!</p>
         <div>
             <input type="email" id="subscriber" class="form-control inline" placeholder="e-mail adresa">
-            <input type="button" class="btn btn-primary" value="Pretplati se">
+            <input type="button" class="btn btn-danger" value="Pretplati se">
         </div>
     </div>
     <div>
