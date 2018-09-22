@@ -306,10 +306,16 @@ header nav ul li {
   width: 40px;
   height: 49px;
   cursor: pointer;
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-image: url(../media/menu-toggle.png);
+  padding-top: 10px;
+}
+#menuToggle > span {
+  display: block;
+  height: 5px;
+  background-color: #fff;
+  border-radius: 2px;
+}
+#menuToggle > span:not(:last-child) {
+  margin-bottom: 6px;
 }
 header a.menu-link {
   text-transform: uppercase;
@@ -326,9 +332,12 @@ header a.menu-link {
   overflow: hidden;
 }
 header .logo span {
+  background-image: url(../media/bundle.png);
+  display: block;
   height: 50px;
-  line-height: 50px;
-  font-size: 25px;
+  width: 120px;
+  background-size: 616px 100px;
+  background-position: -500px 0;
 }
 header a.menu-link:not(.logo):hover,
 header a.active {
@@ -411,10 +420,32 @@ footer > div > div
 footer > div > div a:not(:last-child) {
   margin-right: 30px;
 }
-.pocetna .atp img {
+.pocetna .social-icons a span {
+  background-image: url(../media/bundle.png);
+  display: block;
+  height: 30px;
+  width: 30px;
+  background-size: 185px 30px;
+}
+/* .pocetna .atp img {
   display: block;
   width: 30px;
   height: 30px;
+} */
+.facebook-icon {
+  background-position: 0 0;
+}
+.youtube-icon {
+  background-position: -30px 0;
+}
+.instagram-icon {
+  background-position: -60px 0;
+}
+.linkedin-icon {
+  background-position: -90px 0;
+}
+.skype-icon {
+  background-position: -120px 0;
 }
 .pocetna .atp ul li {
   margin-right: 15px;
@@ -438,6 +469,11 @@ footer > div > div a:not(:last-child) {
 }
 .pocetna .content img {
   max-width: 98%;
+}
+@media screen and (max-width: 800px) {
+  .pocetna .content img {
+    height: auto!important;
+  }
 }
 .meow .btn-info {
   box-shadow: 0 5px 30px gray;
@@ -1163,8 +1199,7 @@ textarea {
   overflow: hidden;
   margin-right: 10px;
   margin-bottom: 10px;
-  box-shadow: 0px 0px 10px gray;
-  /* float: left; */
+  /* box-shadow: 0px 0px 10px gray; */
 }
 .blog .post:nth-child(4) {
   margin-right: 0;
@@ -1628,6 +1663,10 @@ textarea {
   header .logo span {
     display: block;
     float: left;
+  }
+  header a.logo {
+    padding-left:0;
+    padding-right:0;
   }
   .pocetna video { 
     margin-top: 0;

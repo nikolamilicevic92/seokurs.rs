@@ -16,7 +16,7 @@
                 <h3 {{$editable}} data-id="{{$cf['card_1_title']->id}}">{{$cf['card_1_title']->value}}</h3>
                 <p {{$editable}} data-id="{{$cf['card_1_content']->id}}">{{$cf['card_1_content']->value}}</p>
                 <div class="flex-center">
-                <img height="350" src="assets/media/Pocetna1.png" alt="">
+                    <img height="350" src="assets/media/Pocetna1.png" alt="">
                 </div>
             </div>
             </li>
@@ -26,7 +26,8 @@
                 <h3 {{$editable}} data-id="{{$cf['card_2_title']->id}}">{{$cf['card_2_title']->value}}</h3>
                 <p {{$editable}} data-id="{{$cf['card_2_content']->id}}">{{$cf['card_2_content']->value}}</p>
                 <div class="flex-center">
-                <img height="380px" src="assets/media/Pocetna2.png" alt="">
+                    <span class="img-info hidden" data-height="380" data-src="Pocetna2.png" data-alt="SEO2"></span>
+                    <!-- <img height="380px" src="assets/media/Pocetna2.png" alt=""> -->
                 </div>
             </div>
             </li>
@@ -36,7 +37,8 @@
                 <h3 {{$editable}} data-id="{{$cf['card_3_title']->id}}">{{$cf['card_3_title']->value}}</h3>
                 <p {{$editable}} data-id="{{$cf['card_3_content']->id}}">{{$cf['card_3_content']->value}}</p>
                 <div class="flex-center">
-                <img height="350" src="assets/media/Pocetna3.png" alt="">
+                    <span class="img-info hidden" data-height="350" data-src="Pocetna3.png" data-alt="SEO3"></span>
+                <!-- <img height="350" src="assets/media/Pocetna3.png" alt=""> -->
                 </div>
             </div>
             </li>
@@ -46,7 +48,8 @@
                 <h3 {{$editable}} data-id="{{$cf['card_4_title']->id}}">{{$cf['card_4_title']->value}}</h3>
                 <p {{$editable}} data-id="{{$cf['card_4_content']->id}}">{{$cf['card_4_content']->value}}</p>
                 <div class="flex-center">
-                <img height="380px" src="assets/media/Pocetna4.png" alt="">
+                    <span class="img-info hidden" data-height="380" data-src="Pocetna4.png" data-alt="SEO4"></span>
+                <!-- <img height="380px" src="assets/media/Pocetna4.png" alt=""> -->
                 </div>
             </div>
             </li>
@@ -56,7 +59,8 @@
                 <h3 {{$editable}} data-id="{{$cf['card_5_title']->id}}">{{$cf['card_5_title']->value}}</h3>
                 <p {{$editable}} data-id="{{$cf['card_5_content']->id}}">{{$cf['card_5_content']->value}}</p>
                 <div class="flex-center">
-                <img height="380px" src="assets/media/Pocetna5.png" alt="">
+                    <span class="img-info hidden" data-height="380" data-src="Pocetna5.png" data-alt="SEO5"></span>
+                <!-- <img height="380px" src="assets/media/Pocetna5.png" alt=""> -->
                 </div>
             </div>
             </li>
@@ -66,7 +70,8 @@
                 <h3 {{$editable}} data-id="{{$cf['card_6_title']->id}}">{{$cf['card_6_title']->value}}</h3>
                 <p {{$editable}} data-id="{{$cf['card_6_content']->id}}">{{$cf['card_6_content']->value}}</p>
                 <div class="flex-center">
-                <img height="350px" src="assets/media/Pocetna6.png" alt="">
+                <span class="img-info hidden" data-height="350" data-src="Pocetna6.png" data-alt="SEO6"></span>
+                <!-- <img height="350px" src="assets/media/Pocetna6.png" alt=""> -->
                 </div>
             </div>
             </li>
@@ -115,30 +120,35 @@
     <div>
         <p>Besplatan sadržaj na društvenim mrežama!</p>
         <p>ZAPRATITE NAS</p>
-        <ul class="flex-center">
+        <ul class="flex-center social-icons">
             <li>
                 <a href="#">
-                    <img src="assets/media/facebook.png" alt="">
+                    <span class="facebook-icon"></span>
+                    <!-- <img src="assets/media/facebook.png" alt=""> -->
                 </a>
             </li>
             <li>
                 <a href="#">
-                    <img src="assets/media/youtube.png" alt="">
+                    <span class="youtube-icon"></span>
+                    <!-- <img src="assets/media/youtube.png" alt=""> -->
                 </a>
             </li>
             <li>
                 <a href="#">
-                    <img src="assets/media/instagram.png" alt="">
+                    <span class="instagram-icon"></span>
+                    <!-- <img src="assets/media/instagram.png" alt=""> -->
                 </a>
             </li>
             <li>
                 <a href="#">
-                    <img src="assets/media/linkedin.png" alt="">
+                    <span class="linkedin-icon"></span>
+                    <!-- <img src="assets/media/linkedin.png" alt=""> -->
                 </a>
             </li>
             <li>
                 <a href="#">
-                    <img src="assets/media/skype.png" alt="">
+                    <span class="skype-icon"></span>
+                    <!-- <img src="assets/media/skype.png" alt=""> -->
                 </a>
             </li>
         </ul>

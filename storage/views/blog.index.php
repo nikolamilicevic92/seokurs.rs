@@ -8,7 +8,7 @@
   <?php endif; ?>
   <div>
     <?php foreach($blogs as $blog): ?>
-    <div class="post">
+    <div class="post shdw">
       <div class="thumbnail-container">
         <a href="blog/<?php echo htmlspecialchars($blog->url_title); ?>">
           <img class="thumbnail"

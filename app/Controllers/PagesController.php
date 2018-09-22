@@ -20,7 +20,7 @@ class PagesController extends BaseController
 			'page' => Page::one(['page_name' => 'pocetna']),
 			'cf'   => CustomField::findByPage('pocetna'),
 			'editable' => user()->isAdmin ? 'contenteditable=true' : '',
-			'scripts' => ['client/pocetna', 'client/o-nama']
+			'scripts' => ['client/o-nama']
 		];
 
 		if(user()->isAdmin) $data['scripts'][] = 'admin/custom-field-updater';

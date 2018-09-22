@@ -29,22 +29,60 @@ window.addEventListener('resize', () => {
   }
 })
 
-tabs.each((tab, i) => {
-  tab.on('click', (tab, event) => {
-    lastTabIndex = i;
-    const content = tab.get('.content');
-    //If it's inline layout, only one tab can be active, so we slide it in and slide out others
-    if(window.innerWidth >= windowWidthAtTransition) {
-      slideIn(tab, content);
-      //Closing the other tabs
-      slideOutOtherTabs(i);
+//Data for recording lazy loading of images
+const imgDir = 'assets/media/';
+//Loaded images, first one is loaded
+const images = [0];
+
+function loadTabImage(tab, i) {
+
+  return new Promise(resolve => {
+
+    if(images.indexOf(i) !== -1) {
+
+      resolve();
+
     } else {
-      if(tab.hasClass('active')) {
-        slideUp(tab, content); 
-      } else { 
-        slideDown(tab, content);
+
+      images.push(i);
+
+      const imgInfo = tab.get('.img-info');
+      
+      if(imgInfo) {
+        const img = new Image();
+        img.height = imgInfo.attr('data-height');
+        img.alt = imgInfo.attr('data-alt');
+        img.src = imgDir + imgInfo.attr('data-src');
+        img.onload = () => {
+          tab.get('.flex-center').append(img);
+          resolve();
+        }
+      } else {
+        resolve();
       }
     }
+  });
+}
+
+tabs.each((tab, i) => {
+  tab.on('click', (tab, event) => {
+    loadTabImage(tab, i)
+      .then(() => {
+        lastTabIndex = i;
+        const content = tab.get('.content');
+        //If it's inline layout, only one tab can be active, so we slide it in and slide out others
+        if(window.innerWidth >= windowWidthAtTransition) {
+          slideIn(tab, content);
+          //Closing the other tabs
+          slideOutOtherTabs(i);
+        } else {
+          if(tab.hasClass('active')) {
+            slideUp(tab, content); 
+          } else { 
+            slideDown(tab, content);
+          }
+        }
+      });
   })
 })
 
