@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.7.9
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Sep 20, 2018 at 05:25 PM
--- Server version: 5.7.19
--- PHP Version: 7.1.9
+-- Generation Time: Sep 22, 2018 at 05:56 PM
+-- Server version: 5.7.21
+-- PHP Version: 7.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -21,8 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `seocours`
 --
-CREATE DATABASE IF NOT EXISTS `seocours` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `seocours`;
 
 -- --------------------------------------------------------
 
@@ -37,7 +35,16 @@ CREATE TABLE IF NOT EXISTS `answer` (
   `correct` tinyint(1) NOT NULL DEFAULT '0',
   `id_question` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `answer`
+--
+
+INSERT INTO `answer` (`id`, `answer`, `correct`, `id_question`) VALUES
+(1, '1', 1, 1),
+(2, '2', 0, 1),
+(3, '5', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -57,14 +64,15 @@ CREATE TABLE IF NOT EXISTS `blog` (
   `meta_keywords` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `meta_description` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `blog`
 --
 
 INSERT INTO `blog` (`id`, `title`, `url_title`, `description`, `category`, `thumbnail`, `content`, `meta_keywords`, `meta_description`) VALUES
-(2, 'Opis', 'Opis', 'nema', 'seo_kurs_opis', 'storage/uploads/public/5015b858eec8627786b78b1bc6404089.jpeg', '<div style=\"text-align: justify;\"><span style=\"color: rgb(70, 70, 70); font-family: Verdana;\">SEO kurs online predstavlja najprodavaniji kurs u regionu. Kurs sadrzi prakticne obuke uz interaktivan pristup kao i potpunu podrsku tokom SEO kursa. Uz nas kurs isto tako dobijate pristup video materijalu koji mozete gledati sa bilo kog uredjaja.</span></div>', 'nema', 'nema');
+(2, 'Opis', 'Opis', 'nema', 'seo_kurs_opis', 'storage/uploads/public/5015b858eec8627786b78b1bc6404089.jpeg', '<div style=\"text-align: justify;\"><font color=\"#464646\" face=\"Verdana\">SEO kurs predstavlja najprodavaniji kurs u regionu. Naš način rada se razlikuje od drugih škola i akademija. Mi radimo na pravim primerima od naših klijenata kroz čitav kurs.</font></div>', 'nema', 'nema'),
+(3, 'SEO Optimizacija Sajtova u Srbiji', 'SEO-Optimizacija-Sajtova-u-Srbiji', 'Zanima Vas kako da uradite pravilnu SEO optimizaciju? Pročitajte naše detaljno uputstvo i saznajte sve trikove do mesta broj jedan u pretraživačima.', 'SEO', 'storage/uploads/public/669bddd98f7b6a56eda629200590c73d.png', '<h1 style=\"text-align: center;\"><font color=\"#f40006\" size=\"6\" face=\"Trebuchet MS\">SEO Optimizacija Sajtova u Srbiji</font></h1><div><font face=\"Trebuchet MS\">Da li ste se uvek pitali kako pojedini sajtovi tako lako dospeju do prvog mesta i dobijaju izuzetno veliki broj organskih poseta? Ne troše novac na plaćene reklame već dobijaju profit čisto putem organskih poseta ne plaćajući apsolutno ništa? To je zapravo moguće uz pravilnu SEO optimizaciju sajta. U našem clanku ćemo videti šta je sve potrebno kako bismo pravilno optimizovali određeni sajt od nule do savršenstva.</font></div>', 'SEO optimizacija sajta', 'SEO optimizacija sajtova u Srbiji. Pravilan nacin optimizacije za sve pretrazivace. Saznajte trikove do mesta broj jedan.');
 
 -- --------------------------------------------------------
 
@@ -76,10 +84,10 @@ DROP TABLE IF EXISTS `custom_field`;
 CREATE TABLE IF NOT EXISTS `custom_field` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `value` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `value` text COLLATE utf8_unicode_ci NOT NULL,
   `id_page` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=75 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=80 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `custom_field`
@@ -118,21 +126,21 @@ INSERT INTO `custom_field` (`id`, `name`, `value`, `id_page`) VALUES
 (31, 't2', 'Senior SEO Specialist', 8),
 (32, 't3', 'Instagram Branding', 8),
 (33, 't4', 'Facebook Marketing - PPC', 8),
-(34, 't1_p', 'Preko 200 snimljenih kurseva o digitalnom marketingu, i preko 30.000 studenata. Best Seller znacka za instruktora vise od godinu dana.', 8),
-(35, 't2_p', 'Vise od 5 godina iskustva u SEO industriji. Preko 20 uspesnih projekata realizovanih kroz 5 godina. SEO sertifikati, Google Analytics sertifikati, PPC sertifikati.', 8),
-(36, 't3_p', 'Razvijanje brenda, povećavanje publike, povezivanje sa B2C. Preko 200.000 pratilaca kroz 5 godina uspesno dovedeno klijentima.', 8),
-(37, 't4_p', 'Preko 1.000 pokrenutih kampanja kroz 5 godina. Dropshipping, B2C reklame. Marketing strategije, rad sa influencerima.', 8),
-(38, 't5_p', 'Nakon 5 godina u digitalnom marketingu i rada u razli?itim industrijama znam sta je potrebno da bi Vas biznis uspeo.Znam sta zapravo funkcionise a sta ne funkcionise.', 8),
-(39, 't6_p', 'Rad na 5 biznisa koji su se bavili dropshipping biznis modelom. Zanima Vas kako da pokrenete svoj? Kontaktirajte me.', 8),
-(40, 't5', 'Biznis & Inovacije', 8),
-(41, 't6', 'DropShipping Biznis', 8),
-(42, 'aside_title', 'SEO KURS - Akademija', 1),
-(43, 'aside_description', 'Zelite da postanete sertifikovani SEO ekspert? Zanima Vas kako da dominirate u Google pretragama? Planirate da pokrenete sopstveni online biznis? SEO kurs je pravo resenje za Vas. Naucite kroz samo par dana kako se radi pravilna SEO optimizacija sajta.', 1),
-(44, 'aside_l1', 'Preko 100 sati video materijala sa prakticnim radom. Svaka oblast sastoji se od teoretskog dela i prakticne obuke, zato je nas SEO kurs najbolji.', 1),
-(45, 'aside_l2', 'Naucicete najbolje SEO tehnike i SEO optimizaciju za bilo koji sajt. Kako da napravite pravilnu SEO strategiju i donesete zeljene rezultate u najkracem mogucem roku.', 1),
-(46, 'aside_l3', 'Uz pomoc naseg SEO kursa bicete u mogucnosti da konkurisete za dobro placene poslove koje mozete raditi cak i od kuce, ili zapoceti sopstvenu SEO agenciju.', 1),
-(47, 'aside_l4', 'Ukoliko imate svoj lokalni biznis ili sajt koji dugo nema rezultate, naucicete sta je potrebno da dominirate u odredjenom gradu ili drzavi, kao i kako da pobedite konkurenciju uz pomoc lokalne SEO optimizacije.', 1),
-(48, 'aside_l5', 'Kurs je napravljen kao rezultat 5 uspesnih godina u SEO industriji i mnogobrojnim uspesnim projektima kroz koje cemo proci u SEO kursu. Ne propustite vase mesto, upisite danas SEO kurs!', 1),
+(34, 't1_p', 'Započeo sam sa snimanje kurseva o digitalnom marketingu, SEO optimizaciji, dropshipping-u i sponzorisanim reklamama početkom 2017. godine. Trenutno imam više od 10 kurseva na Udemy. Kroz celu 2018. godinu bio imao sam kurseve koji su spadali u \"Best Selling\" kurseve na Udemy u svojoj kategoriji.', 8),
+(35, 't2_p', 'SEO optimizacijom i digitalnim marketingom se bavim od 2013. godine. Iza mene stoje brojni uspešni projekti koje možete videti u SEO kursu koji predajem online. Nakon više od 5 godina u marketing industriji mogu reći da sam se susreo sa svim mogućim izazovima kada je SEO u pitanju i njihovim rešavanjem.', 8),
+(36, 't3_p', 'U slobodno vreme razvijam Instagram naloge od nule i pravim brendove koje kasnije koristim ili za promocije ili za povezivanje sa svojim novim sajtom koji kasnije preprodam kada razvijem biznis. Često volim da testiram različite industrije da vidim kako reaguju na Instagram platformi. Dobar deo naloga su Influenceri u svojoj oblasti.', 8),
+(37, 't4_p', 'Tokom proteklih 5 godina pohađao sam razne online kurseve i  pratio uspešne dropshipping mentore koji su razvili biznise samo uz pomoć plaćenih reklama. U SEO kursu ćemo se susresti sa ovom oblasti u određenom trenutku kako bismo dobili širu sliku marketinga koji nije samo SEO optimizacija.', 8),
+(38, 't5_p', 'Moj omiljeni način zarade preko interneta jeste dropshipping odnosno posredovanje između potražnje i prodaje. Stvar koja mene odvaja od drugih dropshipping biznisa jeste što ne radim preprodavanje proizvoda, već usluga gde je mnogo veća zarada i manji rizici. ', 8),
+(39, 't6_p', 'Oduvek sam hteo da imam biznis koji donosi zaradu dok ne radim nista. Nakon 5 godina u marketing industriji napravio sam brojne biznise koji mi omogućavaju da zarađujem i kada ne radim apsolutno ništa. Većina biznisa koje imam su u potpunosti automatizovani i ne zahtevaju previše vremena. Kroz SEO kurs prolazimo detaljno kroz ovu oblast ukoliko tražite isto.', 8),
+(40, 't5', 'Drop Shipping Model', 8),
+(41, 't6', 'Pasivna Zarada', 8),
+(42, 'aside_title', 'SEO KURS AKADEMIJA ', 1),
+(43, 'aside_description', 'Postanite sertifikovani SEO stručnjak uz online kurs dostupan na svim uređajima.', 1),
+(44, 'aside_l1', 'Više od 100 sati praktične obuke.', 1),
+(45, 'aside_l2', 'Doživotni pristup novim lekcijama.', 1),
+(46, 'aside_l3', 'Radite sa bilo koje lokacije.', 1),
+(47, 'aside_l4', 'Napravite online biznis uz našu pomoć.', 1),
+(48, 'aside_l5', 'Pronađite dobro plaćen posao.', 1),
 (49, 'header_description', 'SEO kurs koji ce Vas dovesti na prvu poziciju u pretrazivacima. Najprodavaniji kurs 2018 godine u Srbiji. Ukoliko se upisete do kraja meseca ostvarujete popust od 50%. Cena SEO kursa iznosi 9.999 dinara, u cenu nije uracunat PDV.', 3),
 (50, 'description', 'SEO kurs online predstavlja najprodavaniji kurs u regionu. Kurs sadrzi prakticne obuke uz interaktivan pristup kao i potpunu podrsku tokom SEO kursa. Uz nas kurs isto tako dobijate pristup video materijalu koji mozete gledati sa bilo kog uredjaja. ', 3),
 (51, 'what_will_I_learn', 'SEO Optimizacija Sajta', 3),
@@ -140,23 +148,28 @@ INSERT INTO `custom_field` (`id`, `name`, `value`, `id_page`) VALUES
 (54, 'what_will_I_learn', 'Tehnicki SEO', 3),
 (55, 'what_will_I_learn', 'Copywriting', 3),
 (56, 'what_will_I_learn', 'Outreach', 3),
-(57, 'what_will_I_learn', 'Programi za SEO', 3),
+(57, 'what_will_I_learn', 'Dizajn stranica', 3),
 (58, 'what_will_I_learn', 'Analitika', 3),
 (59, 'what_will_I_learn', 'Iskustvo korisnika', 3),
 (60, 'what_will_I_learn', 'Pretrazivaci', 3),
 (62, 'what_will_I_learn', 'Algoritmi', 3),
-(63, 'card_1_title', 'Neki naslov', 1),
-(64, 'card_2_title', 'Neki naslov', 1),
-(65, 'card_3_title', 'Neki naslov', 1),
-(66, 'card_4_title', 'Neki naslov', 1),
-(67, 'card_5_title', 'Neki naslov', 1),
-(68, 'card_6_title', 'Neki naslov', 1),
-(69, 'card_1_content', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis laborum quos sunt optio officiis corporis quod, inventore odit minima, sed placeat rerum tenetur labore amet molestias at quidem possimus impedit!', 1),
-(70, 'card_2_content', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis laborum quos sunt optio officiis corporis quod, inventore odit minima, sed placeat rerum tenetur labore amet molestias at quidem possimus impedit!', 1),
-(71, 'card_3_content', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis laborum quos sunt optio officiis corporis quod, inventore odit minima, sed placeat rerum tenetur labore amet molestias at quidem possimus impedit!', 1),
-(72, 'card_4_content', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis laborum quos sunt optio officiis corporis quod, inventore odit minima, sed placeat rerum tenetur labore amet molestias at quidem possimus impedit!', 1),
-(73, 'card_5_content', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis laborum quos sunt optio officiis corporis quod, inventore odit minima, sed placeat rerum tenetur labore amet molestias at quidem possimus impedit!', 1),
-(74, 'card_6_content', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis laborum quos sunt optio officiis corporis quod, inventore odit minima, sed placeat rerum tenetur labore amet molestias at quidem possimus impedit!', 1);
+(63, 'card_1_title', 'SEO OPTIMIZACIJA SAJTA', 1),
+(64, 'card_2_title', 'LOKALNI SEO', 1),
+(65, 'card_3_title', 'SEO ANALIZA', 1),
+(66, 'card_4_title', 'IZRADA LINKOVA', 1),
+(67, 'card_5_title', 'BRENDIRANJE', 1),
+(68, 'card_6_title', 'ANALITIKA', 1),
+(69, 'card_1_content', 'Želite da naučite kako da dovedete bilo koji sajt na prvo mesto u pretrazi? Naš SEO Kurs online je pravo rešenje. Praktična obuka SEO optimizacije sa primerima i vidljivim rezultatima uživo tokom same obuke. Sve što Vas zanima se nalazi u našem online kursu, uz dodatne bonus lekcije o marketingu, brendiranju, sponzorisanim reklamama, kao i drop shipping biznis modelu. Rezervišite mesto još danas, pridužite nam se!', 1),
+(70, 'card_2_content', 'Zanima Vas kako da zauzmete prvo mesto u lokalnom paketu na mapama? Vašem biznisu je potrebno prvo mesto u gradu? Bavite se isključivo prodajom usluga ili proizvoda na određenoj lokaciji? Naš SEO kurs će Vas naučiti kako da budete broj #1.', 1),
+(71, 'card_3_content', 'SEO analiza predstavlja detaljan pregled Vašeg sajta, kako bi se kreirala najbolja moguća strategija za Vaš sajt. Uz pravilnu SEO strategiju rezultati dolaze mnogo brže i lakše. Troškovi se u velikoj meri smanjuju dok konverzije rastu.', 1),
+(72, 'card_4_content', 'Nema više gubljenja vremena na izradu loših linkova koji često budu obrisani ili ne donesu očekivani rezultat. Kod nas je sve automatizovano. Pokazaćemo Vam najbolju strategiju kako da dobijate linkove i posete sa drugih sajtova uz pomoć nekoliko alata koje koristimo dug niz godina.', 1),
+(73, 'card_5_content', 'Znate li da dobro formirani brendovi imaju veliku prednost u pretrazi u odnosu na druge rezultate? Uz naš SEO kurs saznaćete sve o brendiranju Vašeg biznisa online. Saznajte kako da izaberete prave ključne reči i napravite sadržaj koji će Vas dovesti na ovu poziciju.', 1),
+(74, 'card_6_content', 'Imali ste prvo mesto u pretrazi ali ste nestali? Sada je pravo vreme da detaljno analizirate Vaše stranice. Uz naš kurs utvrdićemo sve razloge zašto stranice gube svoje pozicije. Uz pomoć analitike saznaćemo kako da povećamo posete i prodaje na sajtu.', 1),
+(75, 'asside_l6', 'Saznajte kako da preprodajete sajtove.', 1),
+(76, 'asside_l7', 'Razmišljajte korak ispred Google-a.', 1),
+(77, 'asside_l8', 'Kreirajte najbolje SEO strategije.', 1),
+(78, 'asside_l9', 'Naučite pravilnu SEO optimizaciju.', 1),
+(79, 'asside_l10', 'Učite od mentora sa više od 5 godina iskustva.', 1);
 
 -- --------------------------------------------------------
 
@@ -179,18 +192,18 @@ CREATE TABLE IF NOT EXISTS `page` (
 --
 
 INSERT INTO `page` (`id`, `page_name`, `title`, `keywords`, `description`) VALUES
-(1, 'pocetna', 'SEO Kurs Online - Optimizacija Sajta', 'SEO Kurs, Optimizacija Sajta,', 'SEO Kurs online dizajniran da naucite kako da dominirate u pretrazivacima. Rezervisite svoje mesto i naucite pravilnu optimizaciju sajta.'),
-(3, 'seo-kurs', 'SEO Kurs - Budite #1', 'SEO Kurs,', 'SEO Kurs se sastoji od preko 100 sati video materijala, teoretskog dela, prakticne obuke kao i online testova koji ce Vas uvesti u digitalni svet.'),
-(4, 'seo-optmizacija', 'SEO Optimizacija Sajta', 'SEO Optimizacija Sajta', 'SEO Optimizacija Sajta predstavlja sektor nase agencije koja je specjalizovana za optimizaciju i povecanje ciljane publike kao i prodaja. Kontaktirajte nas.'),
-(5, 'konsultacije', 'SEO Konsultacije - Kontaktirajte Nas', 'SEO Konsultacije', 'Potrebne su Vam konsultacije za SEO? Planirate da napravite sopstvenu agenciju, naucite SEO ili druga vrsta konsultovanja? Kontaktirajte nas odmah.'),
-(6, 'portfolio', 'SEO Projekti', 'SEO projekti,', 'Zanima Vas zasto smo broj jedan u regionu? Proverite nase projekte i vidite gde su nasi klijenti bili ranije a gde su sada. Zanima Vas? Kontaktirajte nas.'),
-(7, 'nasi-partneri', 'SEO Partneri', 'SEO Partneri, SEO agencija,', 'Bacite pogled na partnere sa kojima blisko saradjujemo duzi niz godina. Saznajte najbolje resenje za Vase probleme, mi smo ih prethodno testirali i odabrali naj'),
-(8, 'o-nama', 'Misija', 'SEO strategija,', 'Svesni smo da nas region nema dovoljno kadrova za SEO. Iz toga smo se odlucili da probudimo svest, snimimo SEO Kurs i pokazemo ljudima iz okruzenja kako da stvo'),
-(9, 'kontakt', 'Kontakt', 'Kontakt', 'Zelite da stupite u kontakt sa nama? Potrebna Vam je SEO optimizacija sajta, ili Vas dodatno zanima SEO Kurs? Kontaktirajte nas.'),
-(10, 'blog', 'SEO Vesti', 'SEO Vesti', 'Ostanite uvek u trendu i poslednjim promenama Google pretrazivaca. Saznajte kako da budete ispred svih i razmisljajte unapred uz nas.'),
-(12, 'login', 'Uloguj se', 'SEO Korisnik', 'Postani nas SEO korisnik jos danas. Uloguj se na svoj nalog, nauci SEO optimizaciju ili nas kontaktiraj za usluge SEO optimizacije.'),
-(13, 'register', 'Registracija', 'Registracija', 'Registruj se i postani sertifikovani SEO specijalista ili poruci SEO optimizaciju za sopstveni sajt i unapredi svoje znanje ili biznis jos danas.'),
-(14, 'password-reset', 'Resetovanje lozinke', 'Resetuj Lozinku', 'Zaboravili ste Vasu lozinku? Desava se. Ovde mozete da je resetujete ponovo nazad. Ukoliko imate daljih problema kontaktirajte nas.');
+(1, 'pocetna', 'SEO Kurs | UPIS U TOKU', 'SEO Kurs, ', 'Zanima Vas šta je potrebno da budete broj 1 u pretraživaču? Naš SEO kurs Vas vodi kroz čitavu SEO Optimizaciju.'),
+(3, 'seo-kurs', 'SEO Kurs Online', 'SEO Kurs,', 'SEO Kurs se sastoji od preko 100 sati video materijala, teoretskog dela, prakticne obuke kao i online testova koji ce Vas uvesti u digitalni svet.'),
+(4, 'seo-optmizacija', 'SEO Optimizacija Sajta', 'SEO Optimizacija', 'Tražite SEO agenciju koja će Vas dovesti na prvo mesto? Na pravom ste mestu. Posetite nas i pogledajte našu široku SEO ponudu po konkurentnim cenama.'),
+(5, 'konsultacije', 'SEO Konsultacije ', 'SEO Konsultacije', 'Potrebne su Vam konsultacije za SEO? Planirate da napravite sopstvenu agenciju, naucite SEO ili druga vrsta konsultovanja? Kontaktirajte nas odmah.'),
+(6, 'portfolio', 'SEO Projekti ', 'SEO projekti,', 'Zanima Vas zašto smo broj jedan u regionu? Proverite naše projekte i vidite gde su naši klijenti bili ranije a gde su sada. Zanima Vas? Kontaktirajte nas.'),
+(7, 'nasi-partneri', 'SEO Partneri ', 'SEO Partneri, SEO agencija,', 'Bacite pogled na partnere sa kojima blisko saradjujemo duži niz godina. Saznajte najbolje rešenje za Vaše probleme, izabrani godinama testiranja.'),
+(8, 'o-nama', 'Mentor ', 'Nebojša Milićević', 'Ekspert za digitalni marketing i SEO optimizaciju. Više od 5 godina iskustva u marketing industriji, brojni uspešni projekti i biznisi napravljeni od početka.'),
+(9, 'kontakt', 'Kontakt', 'Kontakt', 'Želite da stupite u kontakt sa nama? Potrebna Vam je SEO optimizacija sajta, ili Vas dodatno zanima SEO Kurs? Kontaktirajte nas.'),
+(10, 'blog', 'SEO Novosti', 'SEO Novosti', 'Ostanite uvek u trendu i poslednjim promenama Google pretrazivaca. Saznajte kako da budete ispred svih i razmisljajte unapred uz nas.'),
+(12, 'login', 'Login', 'Login', 'Postani naš SEO korisnik još danas. Registruj se i pristupi našem online SEO kursu sa bilo koje lokacije u bilo koje vreme sa bilo kog uređaja.'),
+(13, 'register', 'Registracija', 'Registracija', 'Registruj se i postani sertifikovani SEO ekspert ili poruči SEO optimizaciju za sopstveni sajt i unapredi svoje znanje ili biznis još danas.'),
+(14, 'password-reset', 'Resetovanje lozinke', 'Resetuj Lozinku', 'Zaboravili ste Vašu lozinku? Dešava se. Ovde možete da je resetujete ponovo nazad. Ukoliko imate daljih problema kontaktirajte nas.');
 
 -- --------------------------------------------------------
 
@@ -204,14 +217,19 @@ CREATE TABLE IF NOT EXISTS `partner` (
   `logo` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `partner`
 --
 
 INSERT INTO `partner` (`id`, `logo`, `name`) VALUES
-(4, 'http://via.placeholder.com/350x150', 'Partner 2');
+(8, 'storage/uploads/public/8dc4587083384b7d2508fdadebff3ec5.png', 'Udemy for Business'),
+(9, 'storage/uploads/public/efdc43dd80fd4f84afd0fd348b6c0650.gif', 'Shopify Partner'),
+(10, 'storage/uploads/public/b8b67894385bfd8620a6ef9f3395325b.jpg', 'SEMRush'),
+(11, 'storage/uploads/public/db0080456d2757dcaa43ea8f5893d132.png', 'Yoast'),
+(12, 'storage/uploads/public/5b542cb67edae7a8880f07ab66517160.png', 'Weglot'),
+(13, 'storage/uploads/public/e78152376c1510621d4c67221722cafe.jpg', 'Google Analytics Partner');
 
 -- --------------------------------------------------------
 
@@ -243,7 +261,7 @@ CREATE TABLE IF NOT EXISTS `portfolio` (
 --
 
 INSERT INTO `portfolio` (`id`, `visitors`, `keywords`, `profit`, `orders`, `analytics`, `content`, `title`, `thumbnail`, `description`, `platform`, `url_title`, `meta_description`, `meta_keywords`) VALUES
-(4, 34432, 1700, 23, 34, 'assets/media/analytics-placeholder.png', 'aco vucic vucic acooo', 'Aqua Granite', 'http://via.placeholder.com/350x150', 'Aqua Granite projekat iz New Jersey-a. Prodaja gotovih i rucno radjenih kuhinja. Lokalna SEO optimizacija na WordPress platformi.Sa 2.000 poseta dostignuto 15.000 poseta kroz par meseci.', 'wordpress', 'aqua-granite', 'Meta description nema ukrao vucic', 'vucic aco');
+(4, 10403, 4700, 23, 34, 'storage/uploads/public/138c39360b7c61d2d024d0363d778fab.jpg', 'Aqua Granite projekat - New Jersey', 'Aqua Granite', 'storage/uploads/public/734361c9620d312333c644f0d5403469.png', 'Aqua Granite projekat iz New Jersey-a. Prodaja gotovih i rucno radjenih kuhinja. Lokalna SEO optimizacija na WordPress platformi.Sa 2.000 poseta dostignuto 10.000 poseta kroz 4 meseca.', 'wordpress', 'Aqua-Granite', 'Projekat Aqua Granite i rezultati optmizacije nakon 6 meseci. ', 'Aqua Granite Projekat');
 
 -- --------------------------------------------------------
 
@@ -257,7 +275,14 @@ CREATE TABLE IF NOT EXISTS `question` (
   `question` varchar(255) NOT NULL,
   `id_test` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `question`
+--
+
+INSERT INTO `question` (`id`, `question`, `id_test`) VALUES
+(1, 'Šta predstavlja SEO optimizacija?', 1);
 
 -- --------------------------------------------------------
 
@@ -270,7 +295,14 @@ CREATE TABLE IF NOT EXISTS `section` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `section`
+--
+
+INSERT INTO `section` (`id`, `title`) VALUES
+(1, 'Šta je SEO?');
 
 -- --------------------------------------------------------
 
@@ -300,21 +332,20 @@ INSERT INTO `seo_optimizacija` (`id`, `title`, `description`, `category`) VALUES
 (12, 'Analitika', 'Analitika predstavlja jedan od najvaznijih alata za SEO koji mnoge agencije ne koriste toliko vec samo da Vam pokazu rast i prikaz poseta. Uz pomoc Google analitike mozete videti koje stranice imaju najvise poseta, na koje stranice posetioci idu sa Vasih drugih stranica tako da znate na koje stranice da se fokusirate najvise. Analitika Vam je glavni prijatelj ukoliko zelite da povecate prodaje na sajtu. Isto tako mozete videti ukoliko radite promocije na vise drustvenih mreza koje mreze donose najbolje rezultate kako biste iskljucili upotrebu losih mreza i fokusirali se samo na one koje zapravo donose rezultate. Cesto Vas agencije reklamiraju na x10 mreza ali od toga samo 1 radi i donosi rezultate. Uz pomoc analitike i pravilnu upotrebu mozete da ustedite vreme i izbacite stvari koje ne rade i prebacite se na one koje rade za maksimalne rezultate.', 'on_page_seo'),
 (13, 'Sitemap', 'Sitemap ili mapa sajta predstavlja jedan fajl koji kreirate kako bi Google lakse mogao da procita Vas sajt i sve njegove stranice kako biste imali bolje pozicioniranje na pretrazivacima. Cesto pojedine stranice sajta imaju blokiran pristup pa  pretrazivaci ne mogu da ih indeksiraju uopste pa Vas uopste nema u pretrazi. Ukoliko koristite platforme kao Shopify ili WordPress ta mapa se najcesce sama napravi ali ako imate rucno pravljen sajt onda morate da napravite jednu. Isto tako ako imate sajt na Shopify ili WordPress platformi mnoge stranice koje ne zelite ce biti opet indeksirane u pretrazivacu ovde mozete da ih sakrijete. Desava se da Google indeksira stranice od wp-admin ili autora sajta pa hakeri vec tako mogu da dobiju Vasu login stranicu za administratora i Vase korisnicko ime ostaje im samo da odrade brute-force i provale Vasu sifru da upadnu na sajt.', 'on_page_seo'),
 (14, 'Robots.txt', 'Roboti predstavljaju fajl koji je slican mapi sajta koji kreirate ili vec imate napravljen ako koristite pojedine platforme. Ukoliko imate otvorene forme na Vasem sajtu u velikom ste problemo. Recimo da neko moze da Vam pravi i postavlja sadrzaj na Vas sajt bez prethodne registracije ili verifikacije, cesto se moze desiti da Vas sajt bude napadnu od spam virusa. Tako Vas sajt dobija nenormalan broj spam stranica koji se meri u hiljadama. Kada Google vidi toliko stranica koje su drugacijeg sadrzaja od Vaseg sajta vi zapravo gubite poverenje od Google pretrazivaca i nestajete. Uz pomoc robots.txt fajla mozete da blokirate bilo koju stranicu na Vasem sajtu kako ona ne bi bila indeksirana. Ukoliko Google ne moze da odradi crawl na njoj ona ne moze biti indeksirana.', 'on_page_seo'),
-(15, 'Kljucne reci', 'Description...', 'on_page_seo'),
-(16, 'Interni linkovi', 'Description...', 'on_page_seo'),
-(17, 'Dizajn', 'Description...', 'on_page_seo'),
-(18, 'AMP stranice', 'Description...', 'on_page_seo'),
-(19, 'Skeniranje sajta', 'Description...', 'on_page_seo'),
-(20, '404 linkovi', 'Description...', 'on_page_seo'),
-(21, '301 preusmeravanja', 'Description...', 'on_page_seo'),
-(22, '500 linkovi', 'Description...', 'on_page_seo'),
-(23, 'Data highlighter', 'Description...', 'on_page_seo'),
-(24, 'CTR optmizacija', 'Description...', 'on_page_seo'),
-(25, 'Bounce rate optimizacija', 'Description...', 'on_page_seo'),
+(15, 'Kljucne reci', 'Postoje različite vrste ključnih reči. Često odaberemo pogrešne što nas na kraju košta vremena i novca. Uz naš SEO kurs saznaćete koliko je zapravo potrebno vremena da dođete na prvo mesto za bilo koju ključnu reč.', 'on_page_seo'),
+(16, 'Interni linkovi', 'Veliki broj sajtova zanemaruje povezivanje stranica putem unutrašnjih linkova. Unutrašnje  povezivanje stranica govori robotima koji pročešljavaju Vaš sajt koje stranice su najbitnije. Na osnovu toga Google određene stranice Vašeg sajta vrednuje više u odnosu na druge. Uz pravilno  povezivanje  linkova na sajtu možete dovesti Vaš sajt na bolju poziciju u pretraživačima, dok isto tako možete olakšati Vašim posetiocima pretragu sajta.', 'on_page_seo'),
+(17, 'Dizajn', 'Koliko česte ste se susreli sa sajtom koji nije optimizovan za mobilne uređaje ili jednostavno čudno izgleda preko manjih ekrana? Da li znate da više od 55% posetilaca trenutno u proseku posećuje sajtove putem mobilnog uređaja? Ukoliko Vaš sajt nije optimizovan za sve uređaje to šteti Vašoj reputaciji, gubite posetioce, profit, samim tim i pozicije u pretraživačima.', 'on_page_seo'),
+(18, 'AMP stranice', 'AMP stranice su dizajnirane kako bi  prikazale samo najbitnije informacije određene stranice. Koriste se za mobilne telefone i brzina učitavanja je gotovo trenutna. Svaka sekunda koju Vaš sajt izgubi dok učitava stranice smanjuje konverzije za 7%. AMP stranice pomažu u velikoj meri svakom sajtu. Mogu da se podese na više načina, na različitim  platformama bez poteškoća.', 'on_page_seo'),
+(19, 'Skeniranje sajta', 'Vremenom menjamo sadržaj na sajtu, brišemo stranice, povezujemo se sa drugim sajtovima putem linkova, ubacimo nove stranice za koje zaboravimo da ubacimo meta opis ili naslov. Poželjno je svaki mesec raditi analizu celokupnog sajta ( SEO Audit ) kako bi se otklonile sve greške koje mogu nepoželjno da utiču na Vaš sajt.', 'on_page_seo'),
+(20, '404 linkovi', 'Stranice sa kojima ne želimo da se naši posetioci susreću. Nekada su neizbežne nakon brisanja velikog broja stranica sa proizvodima. Ono što zaboravljamo jeste da te stranice i dalje ostaju u pretraživačima nekoliko meseci. Za to vreme stranice i dalje mogu dovoditi posetioce putem pretraživača, zato je veoma bitno odraditi 301 preusmerenje.', 'on_page_seo'),
+(21, '301 preusmeravanja', '301 preusmeravanje se koristi kada želite da preusmerite staru stranicu na novu verziju koja ima drugačiji link. Kada posetilac pokuša da pristupi stranici putem starog linka on će biti preusmeren na novu stranicu. Isto tako 301 preusmeravanje se koristi kada želite da se rešite nepotrebnih 404 stranica. Ono što je bitno za 301 preusmerenje jeste da prenosi postojeći autoritet stranice na novi URL tako da ne gubite rank koji ste prethodno imali. Previše preusmeravanja na istu stranicu može dovesti do neželjenih efekata. ', 'on_page_seo'),
+(23, 'Označavanje bitnog sadržaja', 'Data Highlighter se koristi kada želite dodatno da pokažete pretraživačima o čemu Vaše stranice zapravo govore. Što ih bolje pretraživači razumeju samim tim imaće bolje pozicije u pretraživačima za određene pretrage. Da biste podesili ovo potrebno je da imate verifikovan nalog na Google Search Console ( Webmasters ) i minimum 10ak stranica koje su optimizovane i imaju sadržaj.', 'on_page_seo'),
+(24, 'CTR optmizacija', 'CTR  ( Click Through Rate ) odnosno broj posetilaca koji klikne na Vaše stranice predstavlja bitan faktor za pozicioniranje u pretraživačima. Što je veći CTR na Vaše stranice Google ih vrednuje više i vidi ih kao najbolji mogući rezultat. Najveća borba za CTR se vodi između prvih pozicija u pretraživačima. Stranica koja ima bolji meta opis i naslov kao i sadržaj unutar stranice i optimizaciju za sve uređaje ima prednost.', 'on_page_seo'),
+(25, 'Bounce rate optimizacija', 'Bounce rate predstavlja procenat ljudi koji su posetili stranicu na sajtu i napustili je bez otvaranja drugih stranica na sajtu. Cilj svakog sajta treba da bude da vodi posetioce kroz sam sajt i da oni otvaraju što više stranica i da se dugo zadrže na njima. To šalje pozitivan signal pretraživačima da se posetiocima sadržaj sajta sviđa i on dobija bolju poziciju. Ukoliko je bounce rate preko 75% trebalo bi da se zapitate šta je problem i da detaljno analizirate stranice i uvrdite problem. Bounce rate treba uvek da bude ispod 25%-30%. To pokazuje nekoliko stvari, da sajt ima pozicije za prave ključne reči i da nudi baš to što posetioci koji koriste te ključne reči traže. Često odabir pogrešnih ključnih reči povećava bounce rate i dovodi posete koje nisu kvalitetne.', 'on_page_seo'),
 (26, 'Pravljenje GMB profila', 'Description...', 'off_page_seo'),
 (27, 'Optimizacija GMB profila', 'Description...', 'off_page_seo'),
 (28, 'Prikupljanje recenzija', 'Description...', 'off_page_seo'),
-(29, 'Lokalna SEO optimizacija', 'Description...', 'off_page_seo'),
+(29, 'Lokalna SEO optimizacija', 'Kad je neko konj...', 'off_page_seo'),
 (30, 'SEO outreach', 'Description...', 'off_page_seo'),
 (31, 'e-Mail outreach', 'Description...', 'off_page_seo'),
 (32, 'Istrazivanje konkurenata', 'Description...', 'off_page_seo'),
@@ -334,13 +365,13 @@ INSERT INTO `seo_optimizacija` (`id`, `title`, `description`, `category`) VALUES
 (46, 'Facebook promocije', 'Description...', 'off_page_seo'),
 (47, 'Instagram promocije', 'Description...', 'off_page_seo'),
 (48, 'LinkedIn promocije', 'Description...', 'off_page_seo'),
-(49, 'Analiza kompletnog sajta', 'Description...', 'tehnicki_seo'),
-(50, 'Provera hostinga', 'Description...', 'tehnicki_seo'),
-(51, 'Optimizacija brzine', 'Description...', 'tehnicki_seo'),
-(52, 'Optimizacija slika', 'Description...', 'tehnicki_seo'),
-(53, 'Kompresovanje JS i CSS fajlova', 'Description...', 'tehnicki_seo'),
-(54, 'Optimizacija za mobilne uredjaje', 'Description...', 'tehnicki_seo'),
-(55, 'Optimizacija za zeljene pretrazivace', 'Description...', 'tehnicki_seo'),
+(49, 'Analiza kompletnog sajta', 'Pre nego što se pokrene bilo kakva optimizacija sajta za SEO mora da se odradi odgovarajuća analiza kompletnog sajta. Analiziranjem sajta utvrđujemo glavne nedostatke i greške sajta koje nam mogu reći mnogo o sajtu i doneti rezultate mnogo brže. Analizom sajta možemo početi odmah sa ispravljanjem grešaka, analizom trenutnih ključnih reči i njihovih pozicija. Možemo se fokusirati na relevantne ključne reči sa druge stranice za koje treba malo vremena da se dovedu na prvu kako bismo videli rezultate mnogo brže. To je jedna od glavnih stvari koje SEO agencije rade svojim klijentima da bi im dostavili željene rezultate kroz relativno kratko vreme.', 'tehnicki_seo'),
+(50, 'Provera hostinga', 'Često odaberemo pogrešan hosting, izaberemo jeftinu opciju ili skupu a ne obratimo pažnju na sitne detalje koji su veoma bitni. Ukoliko biramo shared ( deljeni ) hosting to znači da postoji još nekoliko sajtova sa druge strane koji koriste isti hosting kao i mi. Ukoliko neki sajt od tih zakačenih na naš ima problema sa Google pretraživačem, dobio je kaznu ili je bio ukloljen, ili je jednostavno SPAM, to može isto tako i Vama otežati dobijanje rank-a. Lokacija hostinga je isto tako veoma bitna za brzinu sajta. Ukoliko imate sajt sa kojim želite da prodajete u Srbiji a uzmete hosting koji ima server u Australiji svi koji posete sajt iz Srbije čekaće u proseku 5-10 sekundi duže. Hosting se uvek bira uz lokaciju koja je blizu oblasti u kojoj želite da vodite biznis. Ukoliko je to globalni nivo onda je pravo rešenje Cloud hosting.', 'tehnicki_seo'),
+(51, 'Optimizacija brzine', 'Svaka sekunda koju sajt izgubi učitavanjem stranica smanjuje konverzije za 7% i dovodi do napuštanja posetilaca do 40% ukoliko je učitavanje duže od 3 sekunde. Idealno vreme učitavanja stranica treba da bude između 0,5s/2s. Kako bi se dostigla ova brzina potrebna je odgovarajuća optimizacija sajta. Potrebno je kompresovati JS i CSS fajlove, omogućiti keš, ukloniti nepotrebne ekstenzije i pluginove, kompresovati slike, svesti video snimke na minimum itd.', 'tehnicki_seo'),
+(52, 'Optimizacija slika', 'Stranice na sajtu ne bi trebalo da imaju više od nekoliko megabajta, ukoliko sajt ima veliki broj slika koje imaju i po nekoliko megabajta to može znatno da uspori sajt. Veoma je bitno kompresovati slike na što manju veličinu kako bi se brzina sajta unapredila.', 'tehnicki_seo'),
+(53, 'Kompresovanje JS i CSS fajlova', 'Ukoliko fajlovi na sajtu kao što su Java Script ili CSS nisu optmizovani, u velikoj meri utiče na brzinu sajta. Optimizovanjem samo ovih fajlova možete ubrzati sajt i do nekoliko sekundi, što dovodi do više prodaja i poverenja.', 'tehnicki_seo'),
+(54, 'Optimizacija za mobilne uredjaje', 'Da li ste ikada proveravali da li je Vaš sajt optimizovan za mobilne uređaje? Ako niste, da li znate da preko 55% posetilaca dolazi na Vaš sajt putem mobilnih uređaja? Ukoliko sajt nije optimizovan za mobilne uređaje gubite više od polovine posetilaca i prodaja. Takođe šteti reputaciji sajta i brendu.', 'tehnicki_seo'),
+(55, 'Optimizacija za zeljene pretrazivace', 'Ne posećuju svi putem pretraživača kao što su Chrome. Iako je Chrome najpopularnijii browser današnjice i dalje veliki broj pretražuje koristeći Safari, Operu, Mozilla FireFox, Internet Explorer, Tor, Edge. U zavisnosti od lokacija na svetu neki posetioci više koriste Safari u odnosu na druge, dok u drugom delu sveta pojedini korite samo Mozillu. Sajtovi se različito ponašaju na različitim browserima. Potrebno je isto optimizovati sajt za pretraživače.', 'tehnicki_seo'),
 (56, 'Prilagodljiv dizajn', 'Description...', 'tehnicki_seo'),
 (57, 'Instalacija SSL sertifikata', 'Description...', 'tehnicki_seo'),
 (58, 'Optimizacija admin panela ( WordPress- Shopify )', 'Description...', 'tehnicki_seo'),
@@ -351,7 +382,7 @@ INSERT INTO `seo_optimizacija` (`id`, `title`, `description`, `category`) VALUES
 (63, 'Uklanjanje dupliranog sadrzaja', 'Description...', 'tehnicki_seo'),
 (64, 'Uklanjanje nepozeljnih stranica', 'Description...', 'tehnicki_seo'),
 (65, 'Pisanje SEO optimizovanog sadrzaja', 'Description...', 'tehnicki_seo'),
-(66, 'Kanonicni linkovi ( Canonical )', 'Description...', 'tehnicki_seo');
+(66, 'Kanonični linkovi ( Canonical )', 'Description...', 'tehnicki_seo');
 
 -- --------------------------------------------------------
 
@@ -366,7 +397,14 @@ CREATE TABLE IF NOT EXISTS `test` (
   `duration` int(11) NOT NULL,
   `id_section` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `test`
+--
+
+INSERT INTO `test` (`id`, `title`, `duration`, `id_section`) VALUES
+(1, 'Šta je SEO?', 600, 1);
 
 -- --------------------------------------------------------
 
@@ -380,7 +418,7 @@ CREATE TABLE IF NOT EXISTS `test_user` (
   `id_user` int(11) NOT NULL,
   `id_test` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
