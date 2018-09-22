@@ -87,4 +87,7 @@ if(user()->isAdmin) {
     Core\Support\Session::set('user_status', 'user');
     $res->redirect('/');
   });
+  Route::get('/inbox', function($req, $res) {
+    $res->sendFile('storage/logs/inbox.txt');
+  });
 }

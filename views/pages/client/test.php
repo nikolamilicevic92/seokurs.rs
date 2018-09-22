@@ -84,9 +84,7 @@
   <script>
 
     const rawData = '{!! json_encode($data["test_data"]) !!}';
-    console.log(rawData);
     const data = JSON.parse(rawData);
-    console.log(data);
 
     if(data) {
 
@@ -140,27 +138,6 @@
       })
 
 
-      // for(let i = 0; i < questions.length; i++) {
-      //   const answers = questions[i].querySelectorAll('.answer');
-      //   let resolved = false;
-      //   done++;
-      //   for(let j = 0; j < answers.length; j++) {
-      //     const checked = answers[j].querySelector('input').checked;
-      //     const correct = data.questions[i].answers[j].correct == "1";
-      //     const answer = answers[j].querySelector('p');
-      //     if(correct) {
-      //       answer.classList.add('correct');
-      //     } else if(checked) {
-      //       answer.classList.add('incorrect');
-      //     }
-      //     if(!resolved) {
-      //       if((!correct && checked) || (correct && !checked)) {
-      //         resolved = true;
-      //         done--;
-      //       }
-      //     }
-      //   }
-      // }
       btnContainer.remove(btn);
       const percentage = (done / data.questions.length) * 100;
       window.scrollTo(0, 0);
@@ -219,19 +196,6 @@
         }
         
       })
-    // ajax({
-    //   url: `seo-kurs/test-zavrsen/${data.test.id}`,
-    //   method: 'post',
-    //   callback: res => {
-    //     console.log(res);
-    //     res = JSON.parse(res);
-    //     if(res.error) {
-    //       alert(res.error.message);
-    //     } else {
-    //       alert('Čestitamo, uspešno ste uradili test')
-    //     }
-    //   }
-    // })
   }
 
   } else {

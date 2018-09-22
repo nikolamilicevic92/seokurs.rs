@@ -2,8 +2,11 @@
 
 define('ROOT_DIR', dirname(dirname(dirname(__FILE__))) . '/');
 
+
 spl_autoload_register(function($className) {
-  require_once ROOT_DIR .'app/'. lcfirst($className) . '.php';
+  $file = ROOT_DIR .'app/'. ($className) . '.php';
+  $file = str_replace('\\', '/', $file);
+  require_once $file;
 });
 
 
@@ -23,12 +26,11 @@ Core\Middleware\AuthMiddleware::init();
 
 
 
-
-require ROOT_DIR . 'app/Core/router/Route.php';
+require ROOT_DIR . 'app/Core/Router/Route.php';
 
 require ROOT_DIR . 'routes/public-URIs.php';
 
-require ROOT_DIR . 'app/Core/router/base-routes.php';
+require ROOT_DIR . 'app/Core/Router/base-routes.php';
 
 require ROOT_DIR . 'routes/web.php';
 

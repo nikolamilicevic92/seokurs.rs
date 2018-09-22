@@ -5,10 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <base href="/">
-  <link rel="stylesheet" href="assets/css/core/framework.css">
-  <link rel="stylesheet" href="assets/css/main.css">
-  
-  <!-- <link rel="stylesheet" href="assets/css/rich-text-editor.css"> -->
+  <!-- <link rel="stylesheet" href="assets/css/main.css"> -->
+  <link rel="stylesheet" href="assets/css/main.min.css">
   @foreach($stylesheets as $stylesheet)
     <link rel="stylesheet" href="{{ $stylesheet }}.css">
   @endforeach

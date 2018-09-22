@@ -36,9 +36,6 @@
         <input type="submit" class="btn btn-primary" value="Dodaj">
       </div>
     </form>
-    <!-- Form for uploading new video to the section -->
-    
-    <!-- Form for creating new test -->
     @endif
     <div class="sections">
       @foreach($sections as $section)
@@ -47,10 +44,8 @@
 
           @if(user()->isAdmin)
 
-            <!-- Button that trigers ajax call to update section name -->
             <button class="btn btn-primary update-section">Sačuvaj</button>
 
-            <!-- Form for deleting a section -->
             <form class="delete-section" action="/section/{{$section->id}}" method="POST">
               {!! csrfFormField() !!}
               <input type="hidden" name="_method" value="DELETE">
@@ -78,7 +73,6 @@
             @endforeach
           </ul>
           @if(user()->isAdmin)
-            <!-- Form for uploading new video to the section -->
             <form style="padding:15px 0;" action="/video" method="POST" enctype="multipart/form-data">
               <div class="form-group clearfix">
                 <label for="videoTitle">Naslov snimka</label>
@@ -112,7 +106,6 @@
             @endforeach
           </ul>
           @if(user()->isAdmin)
-            <!-- Form for adding new test to the section -->
             <form style="padding:15px 0;" action="/test" method="POST">
               <div class="form-group clearfix">
                 <label for="testTitle">Naslov testa</label>

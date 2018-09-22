@@ -28,7 +28,7 @@ class TemplateEngine
 
   public static function render($view, $data = []) 
   {
-    if(self::$mode === 'DEVELOPMENT') {
+    if(self::$mode === 'DEVELOPMENT' || user()->isAdmin) {
       $views = self::getViewDependencies($view);
       $layout = self::getViewLayout($view);
       $data['__includes__'] = self::$viewsOutput;
