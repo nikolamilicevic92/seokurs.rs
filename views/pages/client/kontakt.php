@@ -16,11 +16,15 @@
         <label for="poruka">Poruka</label>
         <textarea name="poruka" id="poruka" class="form-control" rows="10" required></textarea>
       </div>
-      <div class="form-group">
-        <label for="ime_i_prezime">Ime i prezime</label>
-        <label for="email">E-mail</label>
-        <input type="text" name="ime_i_prezime" class="form-control inline" id="ime_i_prezime" required>
-        <input type="email" name="email" class="form-control inline" id="email" required>
+      <div class="form-group clearfix">
+        <div class="left">
+          <label for="ime_i_prezime">Ime i prezime</label>
+          <input type="text" name="ime_i_prezime" class="form-control" id="ime_i_prezime" required>
+        </div>
+        <div class="right">
+          <label for="email">E-mail</label>
+          <input type="email" name="email" class="form-control" id="email" required>
+        </div>        
       </div>
       <div class="clearfix">
         <input type="hidden" name="predmet" value="Kontakt">

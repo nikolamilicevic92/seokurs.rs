@@ -22,6 +22,6 @@
     <div class="image-container">
 
     </div>
-    <a href="kontakt" class="btn-primary">KONTAKTIRAJTE NAS</a>
+    <a href="kontakt" class="btn-primary shdw">KONTAKTIRAJTE NAS</a>
   </div>
 </div>

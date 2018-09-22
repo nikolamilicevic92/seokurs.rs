@@ -1,7 +1,7 @@
 @extends(default)
 
 <div class="wrapper max-1200">
-  <div class="cards clearfix">
+  <div class="cards">
     <div class="card">
       <h3>Ukupan broj posetilaca</h3>
       <span>{{$portfolio->visitors}}</span>
