@@ -15,12 +15,28 @@ asideTrigger.on('click', () => {
 });
 
 const video = $('.course-full video');
+const container = document.querySelector('.video-container');
+const aspectRatio = 16 / 9;
+const maxWidth = 1200;
 
-if(window.innerWidth >= 1200) {
-  video.css({height: '675px', width: '1200px'});
-} else {
-  video.css({height: 'auto', width: window.innerWidth + 'px'});
-}
+(function(aspectRatio, maxWidth, container, video) {
+
+  container.style = 'position:relative;width:100%;overflow:hidden;';
+  video.style = 'position:absolute;width:100%;height:100%;object-fit:cover;';
+
+  window.addEventListener('resize', () => adjuctContainerHeight())
+
+  adjuctContainerHeight();
+
+  function adjuctContainerHeight() {
+    let width = maxWidth;
+    if(window.innerWidth < maxWidth) {
+      width = window.innerWidth;
+    }
+    container.style.height = parseInt(width / aspectRatio) + 'px';
+  }
+
+})(aspectRatio, maxWidth, container, video.dom());
 
 
 const _sections = $('.section'); 

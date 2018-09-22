@@ -34,7 +34,7 @@
   margin: 0;
   padding: 0;
 }
-footer{
+main.pocetna + footer {
   margin-top: 30px;
 }
 .shdw {
@@ -146,7 +146,7 @@ header a.active {
   background-color: var(--nav-link-hover-bg);
 }
 body > main {
-  min-height: calc(100vh - 170px);
+  min-height: calc(100vh - 140px);
 }
 /**
 * Footer starts here
@@ -287,10 +287,6 @@ footer > div > div a:not(:last-child) {
 /***** End of pocetna page *****/
 
 /***** seo-kurs page *****/
-.seo-kurs .wrapper {
-  max-width: 1200px;
-  margin: auto;
-}
 .star-rating {
   display: block;
   width: 30px;
@@ -305,8 +301,13 @@ footer > div > div a:not(:last-child) {
 .seo-kurs .preview {
   margin-bottom: 50px;
 }
+.seo-kurs .course-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 .seo-kurs .course-info > div {
-  float: left;
+  /* float: left; */
   padding: 0 15px;
 }
 .seo-kurs .course-info > div:first-child {
@@ -316,13 +317,18 @@ footer > div > div a:not(:last-child) {
   padding-right: 0;
 }
 .seo-kurs .course-info > div:not(:last-child) {
-  border-right: 1px solid gray;
   padding-top: 4px;
   padding-bottom: 4px;
+  margin-bottom: 10px;
+}
+@media screen and (min-width: 1187px) {
+  .seo-kurs .course-info > div:not(:last-child) {
+    border-right: 1px solid gray;
+  }
 }
 .seo-kurs .course-info > div:last-child {
-  float: right;
-  margin-right: 0;
+  /* float: right;
+  margin-right: 0; */
 }
 .seo-kurs .preview .preview-icon,
 .seo-kurs .preview-icon + span,
@@ -398,9 +404,6 @@ footer > div > div a:not(:last-child) {
   margin-bottom: 10px;
   font-size: 18px;
   color: green;
-}
-.seo-kurs video {
-  /* height: 650px; */
 }
 .seo-kurs .section {
   margin-bottom: 30px;
@@ -521,7 +524,7 @@ footer > div > div a:not(:last-child) {
 
 .seo-kurs .aside {
   color: rgb(94, 94, 94);
-  width: 700px;
+  /* max-width: 100%; */
   margin: auto;
 }
 .seo-kurs .aside h3 {
@@ -564,12 +567,10 @@ footer > div > div a:not(:last-child) {
   transform: rotate(225deg);
 }
 .seo-kurs .col-2 {
-  column-count: 2;
-  column-gap: 50px;
   margin-bottom: 50px;
   padding: 15px;
   background-color: white;
-  box-shadow: 3px 3px 3px rgb(182, 182, 182);
+  box-shadow: 0 3px 10px rgb(182, 182, 182);
 }
 .seo-kurs .checked-style {
   padding: 5px;
@@ -597,6 +598,23 @@ footer > div > div a:not(:last-child) {
 }
 .seo-kurs .description p {
   margin-bottom: 20px;
+}
+.seo-kurs .checked-style li {
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media screen and (min-width: 700px) {
+  .seo-kurs .aside {
+    max-width: 700px;
+  }
+  .seo-kurs .col-2 {
+    column-count: 2;
+    column-gap: 50px;
+  }
+  .seo-kurs .checked-style li {
+    width: 100%;
+  }
 }
 /***** end of seo-kurs page *****/
 
@@ -837,34 +855,64 @@ textarea {
 /***** kontakt page *****/
 .kontakt {
   padding-bottom: 50px;
+  max-width: 1100px;
+  margin: auto;
 }
 .kontakt .wrapper {
-  max-width: 1100px;
+  width: 98%;
   background-color: red;
   margin: auto;
-  padding: 90px;
+  padding: 3%;
 }
-.kontakt .info {
-  float: left;
-  width: 35%;
-  height: 530px;
-  padding: 30px;
-  color: white;
-  background-color: black;
+.kontakt .info > *:not(:last-child) {
+  margin-bottom: 15px;
 }
 .kontakt #mail-icon {
   background: url(../media/mail-icon.png);
   display: block;
   width: 80px;
   height: 50px;
-  margin-left: 10%;
-  margin-bottom: 70px;
+  margin: auto;
+  margin-bottom: 15px;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
 }
-.kontakt .info > *:not(:last-child) {
-  margin-bottom: 70px;
+@media screen and (min-width: 1000px) {
+  .kontakt .wrapper {
+    padding: 90px;
+  }
+  .kontakt .info {
+    float: left;
+    width: 35%;
+    height: 530px;
+  }
+  .kontakt form {
+    width: 65%;
+    float: left;
+  }
+  .kontakt .info > *:not(:last-child),
+  .kontakt #mail-icon {
+    margin-bottom: 70px;
+  }
+  .kontakt #mail-icon {
+    margin-left: 10%;
+  }
+}
+@media screen and (min-width: 750px) {
+  .kontakt .left,
+  .kontakt .right {
+    float: left;
+    width: 49.5%;
+  }
+  .kontakt .left {
+    margin-right: 1%;
+  }
+}
+.kontakt .info {
+  padding: 30px;
+  color: white;
+  background-color: black;
 }
 .kontakt .info > p {
   padding: 0 15px;
@@ -872,10 +920,8 @@ textarea {
   font-style: italic;
 }
 .kontakt form {
-  float: left;
   padding: 30px;
   background-color: #fff;
-  width: 65%;
 }
 .kontakt input[type="text"],
 .kontakt input[type="email"],
@@ -892,10 +938,6 @@ textarea {
 .kontakt form h1 {
   margin-bottom: 30px;
   font-family: Arial;
-}
-.kontakt form > div:nth-of-type(2) * {
-  display: inline-block;
-  width: 49%;
 }
 .kontakt input[type="submit"] {
   box-shadow: 3px 3px 15px gray, -3px 3px 15px gray;
@@ -1023,6 +1065,7 @@ textarea {
 }
 .konsultacije .wrapper {
   padding-bottom: 50px;
+  margin-bottom: 0;
 }
 .konsultacije .left h1,
 .pocetna .meow .left h1 {
@@ -1212,13 +1255,18 @@ textarea {
   padding: 20px;
   padding-top: 50px;
 }
+.portfolio-single .cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
 .portfolio-single .card {
   color: white;
-  float: left;
-  width: 24%;
+  width: 270px;
   height: 150px;
-  margin-right: 1%;
-  margin-bottom: 50px;
+  margin-right: 15px;
+  margin-bottom: 15px;
   padding: 15px;
   display: flex;
   flex-direction: column;

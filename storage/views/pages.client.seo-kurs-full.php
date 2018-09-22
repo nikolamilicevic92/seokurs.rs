@@ -1,18 +1,18 @@
 <?php //This view extends default layout ?>
 
   
-<div class="wrapper">
+<div class="wrapper max-1200">
   <div class="course-full">
 
     <div class="clearfix">
       <span id="videoTitle"></span>
       <span id="timer">&nbsp;</span>
     </div>
-
-    <video src="" controls>
-      Vas browser ne podrzava video tag
-    </video>
-
+    <div class="video-container">
+      <video src="" controls>
+        Vas browser ne podrzava video tag
+      </video>
+    </div>
     <div class="course-statistic">
       <p>Pregledano <span id="videosWatched"></span> od <span id="videosCount"></span> snimaka</p>
       <div class="progression-container">

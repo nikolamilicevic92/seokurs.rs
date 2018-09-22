@@ -1,6 +1,6 @@
 <?php //This view extends default layout ?>
  
-<div class="wrapper">
+<div class="wrapper max-1200">
   <div class="preview">
     <div class="video-container">
       <video src="storage/uploads/public/hero-video.mp4" controls>
