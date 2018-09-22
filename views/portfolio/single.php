@@ -3,19 +3,19 @@
 <div class="wrapper max-1200">
   <div class="cards clearfix">
     <div class="card">
-      <h3>Posetioci</h3>
+      <h3>Ukupan broj posetilaca</h3>
       <span>{{$portfolio->visitors}}</span>
     </div>
     <div class="card">
-      <h3>Ključne reči</h3>
+      <h3>Ključne reči u top 100</h3>
       <span>{{$portfolio->keywords}}</span>
     </div>
     <div class="card">
-      <h3>Profit</h3>
+      <h3>Zarada u mesecu</h3>
       <span>{{$portfolio->profit}}</span>
     </div>
     <div class="card">
-      <h3>Porudzbine</h3>
+      <h3>Konverzije</h3>
       <span>{{$portfolio->orders}}</span>
     </div>
   </div>

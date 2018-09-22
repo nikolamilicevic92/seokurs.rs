@@ -1227,16 +1227,16 @@ textarea {
   align-items: center;
 }
 .portfolio-single .card:nth-child(1) {
-  background: linear-gradient(to bottom right, #078c8a, #078c8a);
+  background: linear-gradient(to bottom right, #f51d00f5, #f51d00f5);
 }
 .portfolio-single .card:nth-child(2) {
-  background: linear-gradient(to bottom right, rgb(255, 120, 255), rgb(173, 72, 255));
+  background: linear-gradient(to bottom right, rgb(20, 0, 20), rgb(2, 0, 3));
 }
 .portfolio-single .card:nth-child(3) {
-  background: linear-gradient(to bottom right, rgb(255, 120, 255), rgb(173, 72, 255));
+  background: linear-gradient(to bottom right, #f51d00f5, #f51d00f5);
 }
 .portfolio-single .card:nth-child(4) {
-  background: linear-gradient(to bottom right, rgb(255, 120, 255), rgb(173, 72, 255));
+  background: linear-gradient(to bottom right, rgb(8, 2, 8), rgb(0, 0, 0));
 }
 .portfolio-single h3 {
   font-weight: normal;

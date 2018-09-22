@@ -113,15 +113,9 @@
         </div>
     </div>
     <div>
-<<<<<<< HEAD
-        <p>Pratite nas na društvenim mrežama?</p>
-        <p>POSETITE NAS</p>
-        <ul class="clearfix">
-=======
         <p>Besplatan sadržaj na društvenim mrežama!</p>
         <p>ZAPRATITE NAS</p>
-        <ul class="flex-center clearfix">
->>>>>>> c9a49b0fcba3f4b7188e6489b67ac26ff331e9b2
+        <ul class="flex-center">
             <li>
                 <a href="#">
                     <img src="assets/media/facebook.png" alt="">
