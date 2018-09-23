@@ -116,6 +116,12 @@ class RegisterController extends BaseController
 
   private function validate($body)
   {
+    if(!$body->privacy) {
+      $this->error('Morate se složiti sa politikom privatnosti');
+    }
+    if(!$body->rules) {
+      $this->error('Morate prihvatiti pravila korišćenja');
+    }
     if(!Validator::isName($body->name)) {
       $this->error('Ime može sadržati jedino slova a-z, A-Z, i razmake');
       $this->data['name'] = '';

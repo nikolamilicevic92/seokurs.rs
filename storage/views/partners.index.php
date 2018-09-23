@@ -9,9 +9,13 @@
   <div class="partners clearfix">
     <?php foreach($partners as $partner): ?>
     <div class="partner">
-      <a href="/nasi-partneri/<?php echo htmlspecialchars($partner->id); ?>">
+      <?php if(user()->isAdmin): ?>
+        <a href="/nasi-partneri/<?php echo htmlspecialchars($partner->id); ?>">
+          <img src="<?php echo htmlspecialchars($partner->logo); ?>" alt="<?php echo htmlspecialchars($partner->name); ?>">
+        </a>
+      <?php else: ?>
         <img src="<?php echo htmlspecialchars($partner->logo); ?>" alt="<?php echo htmlspecialchars($partner->name); ?>">
-      </a>
+      <?php endif; ?>
     </div>
     <?php endforeach; ?>
   </div>

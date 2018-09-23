@@ -9,9 +9,13 @@
   <div class="partners clearfix">
     @foreach($partners as $partner)
     <div class="partner">
-      <a href="/nasi-partneri/{{$partner->id}}">
+      @if(user()->isAdmin)
+        <a href="/nasi-partneri/{{$partner->id}}">
+          <img src="{{$partner->logo}}" alt="{{$partner->name}}">
+        </a>
+      @else
         <img src="{{$partner->logo}}" alt="{{$partner->name}}">
-      </a>
+      @endif
     </div>
     @endforeach
   </div>

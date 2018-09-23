@@ -113,8 +113,12 @@
     <div>
         <p>Pretplatite se, ne propustite obaveštenja!</p>
         <div>
-            <input type="email" id="subscriber" class="form-control inline" placeholder="e-mail adresa">
-            <input type="button" class="btn btn-danger" value="Pretplati se">
+            <form action="/kontakt" method="POST">
+                <input type="email" id="subscriber" name="Subscriber" class="form-control inline" placeholder="E-mail adresa" required>
+                <input type="submit" class="btn btn-danger" value="Pretplati se">
+                {!! csrfFormField() !!}
+                <input type="hidden" name="predmet" value="Subscription">
+            </form>
         </div>
     </div>
     <div>

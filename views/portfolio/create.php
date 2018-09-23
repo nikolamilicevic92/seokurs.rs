@@ -8,11 +8,11 @@
     </div>
     <div class="form-group">
       <label for="analytics" style="display:block;">Slika analitike</label>
-      <input type="file" name="analytics" id="analytics">
+      <input type="file" name="analytics" id="analytics" required>
     </div>
     <div class="form-group">
       <label for="thumbnail" style="display:block;">Thumbnail</label>
-      <input type="file" name="thumbnail" id="thumbnail">
+      <input type="file" name="thumbnail" id="thumbnail" required>
     </div>
     <div class="form-group">
       <label for="platform">Platforma</label>

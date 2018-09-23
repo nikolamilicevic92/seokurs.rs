@@ -1,13 +1,28 @@
 (function() {
   
-  window.onload = () => {
-      $('.hero-container')
-        .append([
-            make('video', 'Vaš browser ne podržava video tag')
-                .attr('autoplay', true)
-                .attr('controls', true)
-                .attr('src', 'assets/media/hero-video.mp4')
-        ])
-  }
+const form = $('form');
+
+interceptFormSubmit(form, function(data) {
+  _post(data.url, data.body, false)
+    .then(res => {
+      form.dom().reset();
+      alert('Uspešno ste se pretplatili');
+    })
+});
+
+
+function interceptFormSubmit(form, callback) {
+	form.on('submit', (form, event) => {
+		event.preventDefault()
+		const url = form.attr('action')
+		const method = form.attr('method')
+		const inputs = form.get('[name]');
+    let body = {}
+    inputs.each(input => {
+      body[input.attr('name')] = input.value();
+    })
+		callback({url, method, body})
+	})
+}
   
 })()

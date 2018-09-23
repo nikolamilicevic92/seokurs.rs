@@ -23,7 +23,9 @@
     <img class="analytics" src="{{$portfolio->analytics}}" alt="{{$portfolio->title}}">
   </div>
   <div class="content blog-single">
-    {{$portfolio->content}}
+    <div class="post">
+      {!!$portfolio->content!!}
+    </div>
   </div>
   @if(user()->isAdmin)
     <div class="clearfix" style="padding:50px 0;">

@@ -51,7 +51,7 @@ Route::resource('portfolio', 'PortfolioController')
 
 
 Route::resource('nasi-partneri', 'PartnersController')
-  ->when('guest', 'user', 'purchased')->allow('index', 'show');
+  ->when('guest', 'user', 'purchased')->allow('index');
 
 
 Route::post('/kontakt', 'ContactController@index');

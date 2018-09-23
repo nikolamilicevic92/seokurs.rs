@@ -11,7 +11,7 @@
       <span><?php echo htmlspecialchars($portfolio->keywords); ?></span>
     </div>
     <div class="card">
-      <h3>Zarada u mesecu </h3>
+      <h3>Zarada u mesecu</h3>
       <span><?php echo htmlspecialchars($portfolio->profit); ?></span>
     </div>
     <div class="card">
@@ -23,7 +23,9 @@
     <img class="analytics" src="<?php echo htmlspecialchars($portfolio->analytics); ?>" alt="<?php echo htmlspecialchars($portfolio->title); ?>">
   </div>
   <div class="content blog-single">
-    <?php echo htmlspecialchars($portfolio->content); ?>
+    <div class="post">
+      <?php echo ($portfolio->content); ?>
+    </div>
   </div>
   <?php if(user()->isAdmin): ?>
     <div class="clearfix" style="padding:50px 0;">

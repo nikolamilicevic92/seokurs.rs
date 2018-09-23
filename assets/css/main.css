@@ -235,9 +235,9 @@ main.pocetna + footer {
   display: inline-block;
   margin-bottom: 3px;
 }
-.collapsed {
+/* .collapsed {
   height: 0;
-}
+} */
 .hidden {
   display: none;
 }
@@ -302,7 +302,9 @@ header nav ul li {
 }
 #menuToggle {
   display: block;
-  margin: auto;
+  /* margin: auto; */
+  float: right;
+  margin-right: 15px;
   width: 40px;
   height: 49px;
   cursor: pointer;
@@ -858,7 +860,7 @@ footer > div > div a:not(:last-child) {
   margin-bottom: 30px;
 }
 .seo-optmizacija #contactForm {
-  width: 100%;
+  width: 95%;
   margin: auto;
 }
 .seo-optmizacija .accordion .content-description {
@@ -929,9 +931,9 @@ footer > div > div a:not(:last-child) {
   color: white;
   border-top: 1px solid black;
   margin-bottom: 2px;
-  /* height: 500px; */
+  max-height: 0;
   overflow: hidden;
-  transition: margin 1s ease-out;
+  transition: max-height .5s ease-out;
 }
 .seo-optmizacija .accordion-toggle {
   width: 40px;
@@ -973,8 +975,6 @@ footer > div > div a:not(:last-child) {
   float: right;
   margin: 9px;
   margin-left: 0;
-  /* background-color: goldenrod; */
-  /* color: white; */
   color: white;
   background-color: rgba(2, 2, 2, 0.212);
   border: 1px solid #2eff00;
@@ -986,13 +986,13 @@ footer > div > div a:not(:last-child) {
   background-color: rgba(2, 2, 2, 0.459);
 }
 .seo-optmizacija .collapsed {
-  height: 0;
-  overflow: hidden;
+  /* height: 0; */
+  /* overflow: hidden; */
   padding-top: 0;
   padding-bottom: 0
 }
 .seo-optmizacija .wrapper form {
-  padding: 15px 25px;
+  padding: 15px 20px;
   background-color: rgb(54, 54, 54);
   outline: 1px solid #0071eb;
 }
@@ -1025,7 +1025,7 @@ textarea {
   position: fixed;
   display: none;
   z-index: 999;
-  width: 100%;
+  width: 95%;
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
@@ -1055,18 +1055,6 @@ textarea {
     column-count: 2;
     column-gap: 40px;
   }
-}
-@media screen and (min-width: 750px) {
-  /* .seo-optmizacija .accordion ul {
-    width: 50%;
-    float: left;
-    column-count: 1;
-    margin-bottom: 0;
-  }
-  .seo-optmizacija .accordion .content-description {
-    float: left;
-    width: 50%;
-  } */
 }
 @media screen and (min-width: 1200px) {
   .seo-optmizacija #accordions,
@@ -1444,7 +1432,6 @@ textarea {
   display: block;
   margin: auto;
   width: 150px;
-  height: 150px;
 }
 .portfolio .job p {
   width: 100%;

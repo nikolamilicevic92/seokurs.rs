@@ -13,10 +13,12 @@ function initSliding(accordion) {
   toggle.on('click', toggle => {
     if(content.hasClass('collapsed')) {
       content.removeClass('collapsed');
+      content.css({maxHeight: content.dom().scrollHeight + 'px'})
       toggle.removeClass('closed');
       toggle.addClass('opened')
     } else {
       content.addClass('collapsed');
+      content.css({maxHeight: null})
       toggle.addClass('closed');
       toggle.removeClass('opened')
     }
@@ -26,6 +28,7 @@ function initSliding(accordion) {
 function initDescription(accordion) {
   const options = accordion.get('li');
   const descriptions = accordion.get('.content-description > div');
+  const content = accordion.get('.accordion-content');
   options.each((option, i) => {
     option.on('click', () => {
       descriptions.each((description, j) => {
@@ -35,6 +38,7 @@ function initDescription(accordion) {
           description.css({display: 'block'});
         }
       })
+      content.css({maxHeight: content.dom().scrollHeight + 'px'})
     })
   })
 }
