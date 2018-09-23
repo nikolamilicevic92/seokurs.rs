@@ -1,0 +1,1 @@
+# seokurs.rs
