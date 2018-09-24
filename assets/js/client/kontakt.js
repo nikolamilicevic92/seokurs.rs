@@ -2,11 +2,10 @@
 const form = document.querySelector('form');
 
 interceptFormSubmit(form, function(data) {
-  _post(data.url, data.body, false)
-    .then(res => {
-			form.reset();
-			alert('Vaša poruka je poslata');
-    })
+	form.reset();
+	alert('Vaša poruka je poslata');
+	_post(data.url, data.body)
+		.then(res => csrf(res.csrf));
 });
 
 function interceptFormSubmit(form, callback) {

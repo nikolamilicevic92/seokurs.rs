@@ -7,15 +7,17 @@ use Core\Support\Mailer;
 class ContactController extends BaseController
 {
 
-	private $myEmail = 'nikolamilicevic92@gmail.com';
 
-
-	public function index(Request $request) {
-
-    $subject = $request->body->predmet;
-    $body = $this->getMailBody($request->body->toArray());
+  public function index(Request $request) 
+  {
+    Mailer::send([
+      'to' => CONTACT_EMAIL,
+      'from' => $request->body->from,
+      'subject' => $request->body->subject,
+      'body' => $this->getMailBody($request->body->toArray())
+    ]);
     
-		Mailer::send($this->myEmail, $subject, $body);
+    $this->json(['csrf' => Core\Support\Session::get('csrf')]);
   }
 
 
@@ -23,11 +25,11 @@ class ContactController extends BaseController
 	{
     $body = '';
     foreach($input as $key => $value) {
-      if($key != 'predmet') {
+      if($key !== 'subject' && $key !== 'from') {
         $key = ucfirst(str_replace('_', ' ', $key));
         $body .= "$key\n$value\n\n";
       }
     }
-    return $body;
+    return $body === '' ? 'No email body' : $body;
   }
 }

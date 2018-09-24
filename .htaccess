@@ -1,3 +1,6 @@
+# ExpiresActive On
+# Video
+# ExpiresByType video/mp4 "access plus 1 weeks"
 RewriteEngine ON
 # RewriteCond %{SERVER_PORT} 80 
 # RewriteRule ^(.*)$ https://www.seokurs.rs/$1 [R,L]

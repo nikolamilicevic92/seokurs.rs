@@ -22,12 +22,12 @@
           <input type="text" name="ime_i_prezime" class="form-control" id="ime_i_prezime" required>
         </div>
         <div class="right">
-          <label for="email">E-mail</label>
-          <input type="email" name="email" class="form-control" id="email" required>
+          <label for="from">E-mail</label>
+          <input type="email" name="from" class="form-control" id="from" required>
         </div>        
       </div>
       <div class="clearfix">
-        <input type="hidden" name="predmet" value="Kontakt">
+        <input type="hidden" name="subject" value="Kontakt">
         <input type="reset" value="Otkaži" class="btn cancel">
         <input type="submit" value="Pošalji" class="btn btn-lg btn-danger float-right">
       </div>

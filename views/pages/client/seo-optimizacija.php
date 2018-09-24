@@ -106,11 +106,11 @@
       <h1>Imate drugačije zahteve SEO optimizacije?<br>
           Kontaktirajte nas ovde:</h1>
       <input class="form-control" type="text" name="ime_i_prezime" placeholder="Vaše ime" required>
-      <input class="form-control" type="email" name="email" placeholder="Vaš email" required>
+      <input class="form-control" type="email" name="from" placeholder="Vaš email" required>
       <input class="form-control" type="text" name="broj_telefona" placeholder="Vaš broj telefona (opciono)">
       <input class="form-control" type="text" name="sajt" placeholder="Vaš sajt (opciono)">
       <textarea class="form-control" name="Poruka" cols="30" rows="10" placeholder="Ostavite poruku ovde..."></textarea>
-      <input type="hidden" name="predmet" value="Dodatni zahtevi SEO optimizacije">
+      <input type="hidden" name="subject" value="Dodatni zahtevi SEO optimizacije">
       {!! csrfFormField() !!}
       <input type="submit" class="btn btn-primary" value="Pošalji">
     </form>
@@ -119,11 +119,11 @@
   <form id="contactSpecific" action="kontakt" method="post">
     <h2 id="formTitle"></h2>
     <input class="form-control" type="text" name="ime_i_prezime" placeholder="Vaše ime" required>
-    <input class="form-control" type="email" name="email" placeholder="Vaš email" required>
+    <input class="form-control" type="email" name="from" placeholder="Vaš email" required>
     <input class="form-control" type="text" name="broj_telefona" placeholder="Vaš broj telefona (opciono)">
     <input class="form-control" type="text" name="sajt" placeholder="Vaš sajt (opciono)">
     <textarea class="form-control" name="Poruka" cols="30" rows="10" placeholder="Ostavite poruku ovde..."></textarea>
-    <input type="hidden" name="predmet" id="subject">
+    <input type="hidden" name="subject" id="subject">
     {!! csrfFormField() !!}
     <input type="submit" class="btn btn-primary" value="Pošalji">
     <input onclick="hideForm()" type="button" class="btn btn-primary" value="Otkaži">

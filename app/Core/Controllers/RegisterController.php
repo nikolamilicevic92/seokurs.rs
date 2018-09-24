@@ -196,7 +196,7 @@ class RegisterController extends BaseController
 
 
   /**
-   * Emails the link use has to visit to activate account.
+   * Emails the link user has to visit to activate account.
    * 
    * @var string address
    * @var string token
@@ -206,9 +206,12 @@ class RegisterController extends BaseController
 
   private function mailAccountVerificationLink($address, $token)
   {
-    Mailer::send(
-      $address, 'Potvrda naloga', SITE_URL . REGISTER_URI . "/$token"
-    );
+    Mailer::send([
+      'to' => $address,
+      'from' => CONTACT_EMAIL,
+      'subject' => 'Potvrda naloga',
+      'body' => SITE_URL . REGISTER_URI . "/$token"
+    ]);
   }
 
   /**

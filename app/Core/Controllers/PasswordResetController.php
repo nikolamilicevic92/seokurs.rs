@@ -223,9 +223,12 @@ class PasswordResetController extends BaseController
 
    private function mailPasswordResetToken($address, $token)
    {
-    Mailer::send(
-      $address, 'Resetovanje lozinke', SITE_URL . PASSWORD_RESET_URI . "/$token"
-    );
+    Mailer::send([
+      'to' => $address,
+      'from' => CONTACT_EMAIL,
+      'subject' => 'Resetovanje lozinke',
+      'body' => SITE_URL . PASSWORD_RESET_URI . "/$token"
+    ]);
    }
 
 }

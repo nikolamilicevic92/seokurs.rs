@@ -3,7 +3,7 @@
  
  <div class="hero-container">
     <video autoplay controls>
-        <source src="assets/media/hero-video.mp4" type="video/mp4">
+        <source src="assets/media/hero-video.mp4" poster="assets/media/poster.png" type="video/mp4">
           Your browser does not support video tag
     </video>
 </div>
@@ -114,10 +114,10 @@
         <p>Pretplatite se, ne propustite obaveštenja!</p>
         <div>
             <form action="/kontakt" method="POST">
-                <input type="email" id="subscriber" name="Subscriber" class="form-control inline" placeholder="E-mail adresa" required>
+                <input type="email" name="from" class="form-control inline" placeholder="E-mail adresa" required>
                 <input type="submit" class="btn btn-danger" value="Pretplati se">
                 {!! csrfFormField() !!}
-                <input type="hidden" name="predmet" value="Subscription">
+                <input type="hidden" name="subject" value="Subscription">
             </form>
         </div>
     </div>
@@ -126,25 +126,25 @@
         <p>ZAPRATITE NAS</p>
         <ul class="flex-center social-icons">
             <li>
-                <a href="#">
+                <a href="https://www.facebook.com/seokurs.rs/">
                     <span class="facebook-icon"></span>
                     <!-- <img src="assets/media/facebook.png" alt=""> -->
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="https://www.youtube.com/channel/UCSv9YP51Mddth3EOSYckcaQ">
                     <span class="youtube-icon"></span>
                     <!-- <img src="assets/media/youtube.png" alt=""> -->
                 </a>
             </li>
-            <li>
-                <a href="#">
+            <li>                
+                <a href="https://www.instagram.com/seo_kurs/">
                     <span class="instagram-icon"></span>
                     <!-- <img src="assets/media/instagram.png" alt=""> -->
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="https://www.linkedin.com/in/nebojsamilicevic/">
                     <span class="linkedin-icon"></span>
                     <!-- <img src="assets/media/linkedin.png" alt=""> -->
                 </a>

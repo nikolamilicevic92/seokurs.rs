@@ -25,7 +25,6 @@ Core\Middleware\CSRFMiddleware::init();
 Core\Middleware\AuthMiddleware::init();
 
 
-
 require ROOT_DIR . 'app/Core/Router/Route.php';
 
 require ROOT_DIR . 'routes/public-URIs.php';

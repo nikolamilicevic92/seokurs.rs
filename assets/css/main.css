@@ -862,6 +862,8 @@ footer > div > div a:not(:last-child) {
 .seo-optmizacija #contactForm {
   width: 95%;
   margin: auto;
+  position: relative;
+  right: 8px;
 }
 .seo-optmizacija .accordion .content-description {
   height: 100%;
@@ -1417,7 +1419,7 @@ textarea {
   outline: 1px solid rgb(255, 255, 255);
   padding: 15px;
   padding-top: 5px;
-  box-shadow: 0 10px 10px rgb(167, 167, 167);
+  box-shadow: 0 5px 10px rgb(190, 190, 190);
 }
 .portfolio .job h2 {
   margin-bottom: 10px;
@@ -1589,25 +1591,12 @@ textarea {
     padding-top: 0;
   }
 }
-/* .o-nama .tabs-content li {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  left: 900px;
-  transition: left .5s ease-out;
-} */
 .o-nama h3 {
   text-align: center;
   margin-bottom: 10px;
   font-size: 25px;
   font-weight: 100;
 }
-/* .o-nama li:not(.active) {
- visibility: hidden;
-}
-.o-nama li.active {
-  left: 0;
-} */
 .o-nama .content p {
   margin-bottom: 15px;
   font-size: 16px;
@@ -1625,6 +1614,14 @@ textarea {
 .o-nama li.active h2 {
   background: linear-gradient(to bottom, rgb(251, 1, 1), rgb(168, 0, 0));
 }
+/* Miscelanious*/
+.pravila-koriscenja {
+  padding: 20px 0;
+}
+.pravila-koriscenja p {
+  margin-bottom: 15px;
+}
+
 /**
  * Responsive header and footer
  */

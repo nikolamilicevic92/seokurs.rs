@@ -3,11 +3,10 @@
 const form = $('form');
 
 interceptFormSubmit(form, function(data) {
-  _post(data.url, data.body, false)
-    .then(res => {
-      form.dom().reset();
-      alert('Uspešno ste se pretplatili');
-    })
+  form.dom().reset();
+  alert('Uspešno ste se pretplatili');
+  _post(data.url, data.body)
+    .then(res => csrf(res.csrf));
 });
 
 

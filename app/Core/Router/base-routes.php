@@ -16,11 +16,11 @@
  */
 
 Route::get('/robots.txt', function( $request, $response ) {
-  $response->sendFile('robots.txt');
+  $response->sendFile('storage/robots.txt');
 });
 
 Route::get('/sitemap.xml', function( $request, $response ) {
-  $response->contentType('text/xml')->sendFile('sitemap.xml');
+  $response->contentType('text/xml')->sendFile('storage/sitemap.xml');
 });
 
 
@@ -46,7 +46,7 @@ if(AUTHENTICATION == 'ON') {
  * Access to dev panel only when in dev mode.
  */
 
-if(MODE === 'DEV') {
+if(MODE === 'DEVELOPMENT') {
   Route::get('/dev-panel', '$DevPanelController@index');
 
   Route::post('/dev-panel/controller', '$DevPanelController@controller');

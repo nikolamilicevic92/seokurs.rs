@@ -3,7 +3,7 @@
 <div class="wrapper max-1200">
   <div class="preview">
     <div class="video-container">
-      <video src="storage/uploads/public/hero-video.mp4" controls>
+      <video src="storage/uploads/public/hero-video.mp4" poster="assets/media/poster.png" controls>
         Your browser does support video tag
       </video>
     </div>
